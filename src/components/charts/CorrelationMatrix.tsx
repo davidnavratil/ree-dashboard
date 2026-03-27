@@ -87,7 +87,7 @@ export default function CorrelationMatrix({ data }: Props) {
         </p>
       )}
 
-      <SourceAttribution source="LSEG Datastream, korelace měsíčních výnosů 2014–2025" />
+      <SourceAttribution source="korelace měsíčních výnosů oxidů vzácných zemin 2014–2025" />
     </div>
   )
 }

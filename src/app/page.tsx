@@ -165,7 +165,7 @@ export default async function HomePage() {
             </tbody>
           </table>
         </div>
-        <SourceAttribution source="výpočty na základě tržních cen komponentů a spotových cen vzácných zemin (Datastream 2025)" />
+        <SourceAttribution source="výpočty na základě tržních cen komponentů a spotových cen vzácných zemin" />
       </div>
 
     </div>

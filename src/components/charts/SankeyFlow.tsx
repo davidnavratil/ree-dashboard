@@ -204,7 +204,7 @@ export default function SankeyFlow() {
           </div>
         )}
       </div>
-      <SourceAttribution source="USGS 2025, Adamas Intelligence, odhady toků 2024" />
+      <SourceAttribution source="USGS 2025, vlastní odhady toků 2024" />
     </div>
   )
 }

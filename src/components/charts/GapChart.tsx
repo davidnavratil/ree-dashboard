@@ -86,7 +86,7 @@ export default function GapChart({ data }: Props) {
           />
         </ComposedChart>
       </ResponsiveContainer>
-      <SourceAttribution source="IEA, McKinsey, USGS 2025, Adamas Intelligence" />
+      <SourceAttribution source="IEA, USGS 2025, vlastní odhady" />
     </div>
   )
 }

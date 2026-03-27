@@ -98,7 +98,7 @@ export default function CostWaterfall({ data }: Props) {
           </Bar>
         </BarChart>
       </ResponsiveContainer>
-      <SourceAttribution source="Adamas Intelligence, firemní výkazy, odhady 2025" />
+      <SourceAttribution source="firemní výkazy, vlastní odhady 2025" />
     </div>
   )
 }

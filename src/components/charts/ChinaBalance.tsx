@@ -66,7 +66,7 @@ export default function ChinaBalanceChart({ data }: Props) {
           <Bar dataKey="Volný export" fill="#0E7490" />
         </BarChart>
       </ResponsiveContainer>
-      <SourceAttribution source="USGS 2025, MII Čína, odhady Adamas Intelligence" />
+      <SourceAttribution source="USGS 2025, MII Čína, vlastní odhady" />
     </div>
   )
 }

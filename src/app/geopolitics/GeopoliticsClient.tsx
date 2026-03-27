@@ -157,7 +157,7 @@ export default function GeopoliticsClient({ exportControls, crmaTargets, product
             <CrmaProgressBar key={i} target={target} />
           ))}
         </div>
-        <SourceAttribution source="EU CRMA (Regulation 2024/1252), Adamas Intelligence, národní energetické strategie" />
+        <SourceAttribution source="EU CRMA (Regulation 2024/1252), národní energetické strategie" />
       </div>
 
       {/* Response Cards — Key Countries */}
@@ -208,7 +208,7 @@ export default function GeopoliticsClient({ exportControls, crmaTargets, product
             )
           })}
         </div>
-        <SourceAttribution source="USGS 2025, národní statistické úřady, Adamas Intelligence" />
+        <SourceAttribution source="USGS 2025, národní statistické úřady" />
       </div>
     </div>
   )

@@ -20,7 +20,7 @@ export default async function PricesPage() {
     <div className="space-y-8">
       <PageHeader
         title="Cenová analýza vzácných zemin"
-        subtitle="Historické ceny oxidů vzácných zemin v USD/kg na základě dat z LSEG Datastream (Asian Metals). Vyberte prvky a období pro porovnání."
+        subtitle="Historické měsíční data cen oxidů vzácných zemin v USD/kg. Vyberte prvky a období pro porovnání."
       />
 
       {/* Main Price Chart */}

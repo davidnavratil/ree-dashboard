@@ -334,7 +334,7 @@ export default function ScenariosClient({ vulnerability }: Props) {
             </tbody>
           </table>
         </div>
-        <SourceAttribution source="USGS 2025, Adamas Intelligence, vlastní výpočty" />
+        <SourceAttribution source="USGS 2025, vlastní výpočty" />
       </div>
 
       {/* Historical Substitutions */}

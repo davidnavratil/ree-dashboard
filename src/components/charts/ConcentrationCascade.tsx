@@ -84,7 +84,7 @@ export default function ConcentrationCascade({ data }: Props) {
           ))}
         </BarChart>
       </ResponsiveContainer>
-      <SourceAttribution source="USGS 2025, Adamas Intelligence" />
+      <SourceAttribution source="USGS 2025" />
     </div>
   )
 }

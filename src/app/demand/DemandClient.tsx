@@ -185,7 +185,7 @@ export default function DemandClient({ demand, materialIntensity, projections }:
           ●●● = vysoká závislost, ●● = střední, ● = nízká, — = nepoužívá.
         </p>
         <DemandHeatmap demand={demand} />
-        <SourceAttribution source="Adamas Intelligence, firemní specifikace, IEA 2025" />
+        <SourceAttribution source="firemní specifikace, IEA 2025" />
       </div>
 
       {/* Material Intensity */}
@@ -198,7 +198,7 @@ export default function DemandClient({ demand, materialIntensity, projections }:
           Klikněte na kartu pro detail obsahu jednotlivých prvků.
         </p>
         <MaterialIntensityCards data={materialIntensity} />
-        <SourceAttribution source="Adamas Intelligence, výrobci motorů a turbín, IEA 2025" />
+        <SourceAttribution source="výrobci motorů a turbín, IEA 2025" />
       </div>
 
       {/* Projections Table */}
@@ -211,7 +211,7 @@ export default function DemandClient({ demand, materialIntensity, projections }:
           Všechny hlavní scénáře ukazují na výrazné zvýšení poptávky do roku 2030.
         </p>
         <ProjectionsTable data={projections} />
-        <SourceAttribution source="IEA, McKinsey, Adamas Intelligence, USGS 2025" />
+        <SourceAttribution source="IEA, USGS 2025, vlastní odhady" />
       </div>
     </div>
   )

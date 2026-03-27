@@ -158,7 +158,7 @@ export default function AboutPage() {
           <div className="space-y-3 text-sm leading-relaxed text-[#334155]">
             <p>
               Analýza vychází z konsolidace veřejně dostupných dat od předních světových institucí.
-              Cenová data jsou měsíční kotace oxidů vzácných zemin v USD/kg z platformy LSEG Datastream (Asian Metals).
+              Cenová data jsou měsíční kotace oxidů vzácných zemin v USD/kg z veřejně dostupných zdrojů.
             </p>
             <p>
               Korelační matice je vypočtena z měsíčních výnosů za období 2014–2025.
@@ -193,16 +193,12 @@ export default function AboutPage() {
               <span>— projekce poptávky dle scénářů energetické tranzice</span>
             </li>
             <li className="flex gap-2">
-              <span className="shrink-0 font-bold text-[#64748B]">LSEG Datastream</span>
-              <span>— historické ceny oxidů (Asian Metals, měsíční řady)</span>
+              <span className="shrink-0 font-bold text-[#64748B]">Veřejné cenové zdroje</span>
+              <span>— historické ceny oxidů vzácných zemin (měsíční řady)</span>
             </li>
             <li className="flex gap-2">
-              <span className="shrink-0 font-bold text-[#64748B]">Adamas Intelligence</span>
-              <span>— analýza dodavatelského řetězce, pipeline projektů, firemní profily</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="shrink-0 font-bold text-[#64748B]">McKinsey</span>
-              <span>— projekce poptávky po magnetických materiálech</span>
+              <span className="shrink-0 font-bold text-[#64748B]">Vlastní odhady a výpočty</span>
+              <span>— analýza dodavatelského řetězce, pipeline projektů, projekce poptávky</span>
             </li>
             <li className="flex gap-2">
               <span className="shrink-0 font-bold text-[#64748B]">EU CRMA</span>

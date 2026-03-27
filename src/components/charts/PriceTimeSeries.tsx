@@ -154,7 +154,7 @@ export default function PriceTimeSeries({ data, events, meta }: Props) {
           />
         </LineChart>
       </ResponsiveContainer>
-      <SourceAttribution source="LSEG Datastream (Asian Metals), měsíční data 2014–2025" />
+      <SourceAttribution source="měsíční data cen oxidů vzácných zemin 2014–2025" />
     </div>
   )
 }

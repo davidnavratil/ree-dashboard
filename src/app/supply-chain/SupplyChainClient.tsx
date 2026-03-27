@@ -174,7 +174,7 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
             </tbody>
           </table>
         </div>
-        <SourceAttribution source="výroční zprávy firem, SEC/ASX filings, Adamas Intelligence 2025" />
+        <SourceAttribution source="výroční zprávy firem, SEC/ASX filings, 2025" />
       </div>
 
       {/* Pipeline Timeline */}
