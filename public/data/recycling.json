@@ -1,0 +1,110 @@
+[
+  {
+    "Zdroj EoL magnetů": "HDD (pevné disky)",
+    "Roční tok EU (tis. ks)": "50–100k",
+    "NdFeB/ks (kg)": "0.01–0.015",
+    "Celkem NdFeB (t/r)": "500–1 500",
+    "REE obsah (t/r)": "165–500",
+    "Dostupnost": "Vysoká",
+    "Hlavní bariéra": "Demontáž magnetu pracná"
+  },
+  {
+    "Zdroj EoL magnetů": "EV motory (end-of-life)",
+    "Roční tok EU (tis. ks)": "50–200",
+    "NdFeB/ks (kg)": "1.5–4",
+    "Celkem NdFeB (t/r)": "75–800",
+    "REE obsah (t/r)": "25–265",
+    "Dostupnost": "Nízká (vozy nové)",
+    "Hlavní bariéra": "Fleet dosáhne EoL až ~2030-35"
+  },
+  {
+    "Zdroj EoL magnetů": "Průmyslové motory",
+    "Roční tok EU (tis. ks)": "100–500",
+    "NdFeB/ks (kg)": "0.5–2",
+    "Celkem NdFeB (t/r)": "50–1 000",
+    "REE obsah (t/r)": "17–330",
+    "Dostupnost": "Střední",
+    "Hlavní bariéra": "Různé velikosti; nestandardizováno"
+  },
+  {
+    "Zdroj EoL magnetů": "Větrné turbíny (decom.)",
+    "Roční tok EU (tis. ks)": "200–1 000",
+    "NdFeB/ks (kg)": "20–500",
+    "Celkem NdFeB (t/r)": "4 000–10 000",
+    "REE obsah (t/r)": "1 320–3 300",
+    "Dostupnost": "Rostoucí",
+    "Hlavní bariéra": "Jen direct-drive mají REE"
+  },
+  {
+    "Zdroj EoL magnetů": "Klimatizace / kompresory",
+    "Roční tok EU (tis. ks)": "5 000–20 000",
+    "NdFeB/ks (kg)": "0.05–0.15",
+    "Celkem NdFeB (t/r)": "250–3 000",
+    "REE obsah (t/r)": "83–990",
+    "Dostupnost": "Střední",
+    "Hlavní bariéra": "Rozptýlený tok"
+  },
+  {
+    "Zdroj EoL magnetů": "Pre-consumer scrap (tovární)",
+    "Roční tok EU (tis. ks)": "n/a",
+    "NdFeB/ks (kg)": "n/a",
+    "Celkem NdFeB (t/r)": "2 000–5 000",
+    "REE obsah (t/r)": "660–1 650",
+    "Dostupnost": "Vysoká",
+    "Hlavní bariéra": "Nejčistší; nejsnáze recyklovatelný"
+  },
+  {
+    "Zdroj EoL magnetů": "CELKEM EU tok",
+    "Roční tok EU (tis. ks)": null,
+    "NdFeB/ks (kg)": null,
+    "Celkem NdFeB (t/r)": "7 000–22 000",
+    "REE obsah (t/r)": "2 300–7 100",
+    "Dostupnost": null,
+    "Hlavní bariéra": null
+  },
+  {
+    "Zdroj EoL magnetů": "EU roční spotřeba REE v magnetech",
+    "Roční tok EU (tis. ks)": null,
+    "NdFeB/ks (kg)": null,
+    "Celkem NdFeB (t/r)": "~30 000 NdFeB",
+    "REE obsah (t/r)": "~10 000 REE",
+    "Dostupnost": null,
+    "Hlavní bariéra": null
+  },
+  {
+    "Zdroj EoL magnetů": "CRMA cíl 25% z recyklace",
+    "Roční tok EU (tis. ks)": null,
+    "NdFeB/ks (kg)": null,
+    "Celkem NdFeB (t/r)": null,
+    "REE obsah (t/r)": "~2 500 REE",
+    "Dostupnost": null,
+    "Hlavní bariéra": "Fyzicky dosažitelné; infrastruktura chybí"
+  },
+  {
+    "Zdroj EoL magnetů": "ZÁVĚR: Fyzický tok je DOSTATEČNÝ pro 25% cíl. Problém je INFRASTRUKTURA (sběr, demontáž, separace).",
+    "Roční tok EU (tis. ks)": null,
+    "NdFeB/ks (kg)": null,
+    "Celkem NdFeB (t/r)": null,
+    "REE obsah (t/r)": null,
+    "Dostupnost": null,
+    "Hlavní bariéra": null
+  },
+  {
+    "Zdroj EoL magnetů": "Český ÚOCHB výzkum adresuje klíčový bottleneck: ekologickou SEPARACI REE z recyklovaných magnetů.",
+    "Roční tok EU (tis. ks)": null,
+    "NdFeB/ks (kg)": null,
+    "Celkem NdFeB (t/r)": null,
+    "REE obsah (t/r)": null,
+    "Dostupnost": null,
+    "Hlavní bariéra": null
+  },
+  {
+    "Zdroj EoL magnetů": "EV motory budou hlavní zdroj post-consumer šrotu až od ~2030-35 (fleet stárne).",
+    "Roční tok EU (tis. ks)": null,
+    "NdFeB/ks (kg)": null,
+    "Celkem NdFeB (t/r)": null,
+    "REE obsah (t/r)": null,
+    "Dostupnost": null,
+    "Hlavní bariéra": null
+  }
+]

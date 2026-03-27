@@ -1,0 +1,86 @@
+[
+  {
+    "Stupeň řetězce": "1. Těžba (mine)",
+    "Čína (%)": 69,
+    "USA (%)": 11.5,
+    "Austrálie (%)": 3.3,
+    "Japonsko (%)": 0,
+    "EU (%)": 0,
+    "Myanmar (%)": 7.9,
+    "Ostatní (%)": 8.3,
+    "HHI (odhad)": "~5100",
+    "Zranitelnost": "Vysoká"
+  },
+  {
+    "Stupeň řetězce": "2. Koncentrace rudy",
+    "Čína (%)": 75,
+    "USA (%)": 10,
+    "Austrálie (%)": 4,
+    "Japonsko (%)": 0,
+    "EU (%)": 0,
+    "Myanmar (%)": 8,
+    "Ostatní (%)": 3,
+    "HHI (odhad)": "~5800",
+    "Zranitelnost": "Vysoká"
+  },
+  {
+    "Stupeň řetězce": "3. Separace → oxidy",
+    "Čína (%)": 91,
+    "USA (%)": 1,
+    "Austrálie (%)": 4,
+    "Japonsko (%)": 1,
+    "EU (%)": 1,
+    "Myanmar (%)": 0,
+    "Ostatní (%)": 2,
+    "HHI (odhad)": "~8300",
+    "Zranitelnost": "Kritická"
+  },
+  {
+    "Stupeň řetězce": "4. Konverze oxid → kov/slitina",
+    "Čína (%)": 90,
+    "USA (%)": 1,
+    "Austrálie (%)": 1,
+    "Japonsko (%)": 3,
+    "EU (%)": 1,
+    "Myanmar (%)": 0,
+    "Ostatní (%)": 4,
+    "HHI (odhad)": "~8100",
+    "Zranitelnost": "Kritická"
+  },
+  {
+    "Stupeň řetězce": "5. Výroba NdFeB magnetů (sintr.)",
+    "Čína (%)": 94,
+    "USA (%)": 0.5,
+    "Austrálie (%)": 0,
+    "Japonsko (%)": 5.5,
+    "EU (%)": 2,
+    "Myanmar (%)": 0,
+    "Ostatní (%)": 0,
+    "HHI (odhad)": "~8900",
+    "Zranitelnost": "Kritická"
+  },
+  {
+    "Stupeň řetězce": "6. Separace Dy/Tb (HREE)",
+    "Čína (%)": 99,
+    "USA (%)": 0,
+    "Austrálie (%)": 0,
+    "Japonsko (%)": 0.5,
+    "EU (%)": 0,
+    "Myanmar (%)": 0,
+    "Ostatní (%)": 0.5,
+    "HHI (odhad)": "~9800",
+    "Zranitelnost": "Extrémní"
+  },
+  {
+    "Stupeň řetězce": "7. Výroba SmCo magnetů",
+    "Čína (%)": 70,
+    "USA (%)": 5,
+    "Austrálie (%)": 0,
+    "Japonsko (%)": 20,
+    "EU (%)": 3,
+    "Myanmar (%)": 0,
+    "Ostatní (%)": 2,
+    "HHI (odhad)": "~5400",
+    "Zranitelnost": "Vysoká"
+  }
+]

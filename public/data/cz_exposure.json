@@ -1,0 +1,82 @@
+[
+  {
+    "Český sektor": "Automobilový průmysl",
+    "Podíl na HDP (%)": "~10%",
+    "Zaměstnanost (tis.)": "~434",
+    "Závislost na REE": "KRITICKÁ (EV motory, posilovače, senzory)",
+    "Klíčové REE": "Nd, Pr, Dy, Tb",
+    "Alternativy": "EESM motory (částečná)",
+    "Dopad při 6m výpadku": "Odstávky výroby; ztráta ~1.5% HDP",
+    "Příklady firem": "Škoda Auto, Bosch CZ, Continental CZ"
+  },
+  {
+    "Český sektor": "Strojírenství",
+    "Podíl na HDP (%)": "~7%",
+    "Zaměstnanost (tis.)": "~350",
+    "Závislost na REE": "VYSOKÁ (průmyslové motory, roboty)",
+    "Klíčové REE": "Nd, Pr, Dy",
+    "Alternativy": "Indukční motory (částečná)",
+    "Dopad při 6m výpadku": "Zpomalení výroby; zdražení",
+    "Příklady firem": "Siemens CZ, ABB CZ"
+  },
+  {
+    "Český sektor": "Elektrotechnika",
+    "Podíl na HDP (%)": "~3%",
+    "Zaměstnanost (tis.)": "~120",
+    "Závislost na REE": "VYSOKÁ (motory, transformátory, senzory)",
+    "Klíčové REE": "Nd, Pr, Sm, Gd",
+    "Alternativy": "Omezené",
+    "Dopad při 6m výpadku": "Výpadky dodávek komponent",
+    "Příklady firem": "Honeywell CZ, Eaton CZ"
+  },
+  {
+    "Český sektor": "Obranný průmysl",
+    "Podíl na HDP (%)": "~1%",
+    "Zaměstnanost (tis.)": "~30",
+    "Závislost na REE": "KRITICKÁ (naváděné systémy, radar, komunikace)",
+    "Klíčové REE": "Nd, Sm, Dy, Tb, Y",
+    "Alternativy": "Velmi omezené",
+    "Dopad při 6m výpadku": "Ohrožení NATO závazků",
+    "Příklady firem": "Aero Vodochody, ERA, Retia"
+  },
+  {
+    "Český sektor": "Energetika (OZE)",
+    "Podíl na HDP (%)": "~2%",
+    "Zaměstnanost (tis.)": "~50",
+    "Závislost na REE": "STŘEDNÍ (větrné turbíny, invertory)",
+    "Klíčové REE": "Nd, Pr, Dy",
+    "Alternativy": "Gearbox turbíny (částečná)",
+    "Dopad při 6m výpadku": "Zpomalení rozvojových projektů",
+    "Příklady firem": "ČEZ, Siemens Gamesa dodávky"
+  },
+  {
+    "Český sektor": "IT / telekomunikace",
+    "Podíl na HDP (%)": "~5%",
+    "Zaměstnanost (tis.)": "~200",
+    "Závislost na REE": "NÍZKÁ (HDD, reproduktory, vibrační motory)",
+    "Klíčové REE": "Nd, Er, Y",
+    "Alternativy": "SSD místo HDD; piezo",
+    "Dopad při 6m výpadku": "Minimální přímý dopad",
+    "Příklady firem": "Foxconn CZ, datová centra"
+  },
+  {
+    "Český sektor": "Zdravotnictví",
+    "Podíl na HDP (%)": "~7%",
+    "Zaměstnanost (tis.)": "~300",
+    "Závislost na REE": "NÍZKÁ/STŘEDNÍ (MRI, PET skenery)",
+    "Klíčové REE": "Gd, Lu, Y",
+    "Alternativy": "Omezené pro MRI kontrast",
+    "Dopad při 6m výpadku": "Zdražení diagnostiky",
+    "Příklady firem": "FN Praha, FN Brno"
+  },
+  {
+    "Český sektor": "Sklářský průmysl",
+    "Podíl na HDP (%)": "~0.5%",
+    "Zaměstnanost (tis.)": "~15",
+    "Závislost na REE": "NÍZKÁ (leštiva CeO₂, barvení)",
+    "Klíčové REE": "Ce, La, Er",
+    "Alternativy": "Alternativní leštiva",
+    "Dopad při 6m výpadku": "Mírné zdražení",
+    "Příklady firem": "AGC Flat Glass CZ, Preciosa"
+  }
+]

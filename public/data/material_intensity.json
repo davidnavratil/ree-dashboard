@@ -1,0 +1,142 @@
+[
+  {
+    "Technologie": "BEV sedan (typický)",
+    "NdFeB magnety (kg)": "1.5–3",
+    "Nd+Pr obsah (kg)": "0.5–1",
+    "Dy obsah (kg)": "0.02–0.1",
+    "Tb obsah (kg)": "0–0.03",
+    "Celkem REE (kg)": "0.5–1.2",
+    "Hodnota REE (USD, ~2025)": "~150–400",
+    "Poznámka": "Tesla M3 rear: ~1.5 kg NdFeB"
+  },
+  {
+    "Technologie": "BEV SUV / dual motor",
+    "NdFeB magnety (kg)": "3–5",
+    "Nd+Pr obsah (kg)": "1–1.7",
+    "Dy obsah (kg)": "0.05–0.2",
+    "Tb obsah (kg)": "0.01–0.05",
+    "Celkem REE (kg)": "1–2",
+    "Hodnota REE (USD, ~2025)": "~300–700",
+    "Poznámka": "Vyšší výkon = více REE"
+  },
+  {
+    "Technologie": "Hybridní auto (HEV)",
+    "NdFeB magnety (kg)": "0.8–1.5",
+    "Nd+Pr obsah (kg)": "0.3–0.5",
+    "Dy obsah (kg)": "0.01–0.05",
+    "Tb obsah (kg)": "0–0.02",
+    "Celkem REE (kg)": "0.3–0.6",
+    "Hodnota REE (USD, ~2025)": "~100–200",
+    "Poznámka": "Menší motor"
+  },
+  {
+    "Technologie": "Větrná turbína (DD, per MW)",
+    "NdFeB magnety (kg)": "500–650",
+    "Nd+Pr obsah (kg)": "150–200",
+    "Dy obsah (kg)": "5–15",
+    "Tb obsah (kg)": "1–3",
+    "Celkem REE (kg)": "160–220",
+    "Hodnota REE (USD, ~2025)": "~50 000–70 000/MW",
+    "Poznámka": "12MW = 3–5 t magnetů"
+  },
+  {
+    "Technologie": "Větrná turbína (gearbox, per MW)",
+    "NdFeB magnety (kg)": "~20–50",
+    "Nd+Pr obsah (kg)": "6–15",
+    "Dy obsah (kg)": "0.5–2",
+    "Tb obsah (kg)": "0–0.5",
+    "Celkem REE (kg)": "7–18",
+    "Hodnota REE (USD, ~2025)": "~2 000–5 000/MW",
+    "Poznámka": "Méně REE, ale gearbox údržba"
+  },
+  {
+    "Technologie": "Stíhačka F-35",
+    "NdFeB magnety (kg)": "n/a (mix)",
+    "Nd+Pr obsah (kg)": "n/a",
+    "Dy obsah (kg)": "n/a",
+    "Tb obsah (kg)": "n/a",
+    "Celkem REE (kg)": ">400",
+    "Hodnota REE (USD, ~2025)": "n/a",
+    "Poznámka": "REE v magnetech, radarech, navigaci"
+  },
+  {
+    "Technologie": "Virginia-class ponorka",
+    "NdFeB magnety (kg)": "n/a (SmCo+NdFeB)",
+    "Nd+Pr obsah (kg)": "n/a",
+    "Dy obsah (kg)": "n/a",
+    "Tb obsah (kg)": "n/a",
+    "Celkem REE (kg)": "~4 600",
+    "Hodnota REE (USD, ~2025)": "n/a",
+    "Poznámka": "SmCo pro námořní prostředí"
+  },
+  {
+    "Technologie": "Tomahawk střela",
+    "NdFeB magnety (kg)": "n/a",
+    "Nd+Pr obsah (kg)": "n/a",
+    "Dy obsah (kg)": "n/a",
+    "Tb obsah (kg)": "n/a",
+    "Celkem REE (kg)": "n/a",
+    "Hodnota REE (USD, ~2025)": "n/a",
+    "Poznámka": "18 různých kritických minerálů"
+  },
+  {
+    "Technologie": "Smartphone",
+    "NdFeB magnety (kg)": "0.002–0.005",
+    "Nd+Pr obsah (kg)": "0.001",
+    "Dy obsah (kg)": "~0",
+    "Tb obsah (kg)": "~0",
+    "Celkem REE (kg)": "0.002–0.005",
+    "Hodnota REE (USD, ~2025)": "~0.50–2",
+    "Poznámka": "Vibrační motorek, reproduktor, čočky"
+  },
+  {
+    "Technologie": "HDD pevný disk",
+    "NdFeB magnety (kg)": "0.01–0.015",
+    "Nd+Pr obsah (kg)": "0.003–0.005",
+    "Dy obsah (kg)": "~0",
+    "Tb obsah (kg)": "~0",
+    "Celkem REE (kg)": "0.003–0.005",
+    "Hodnota REE (USD, ~2025)": "~1–3",
+    "Poznámka": "Voice coil actuator"
+  },
+  {
+    "Technologie": "MRI skener",
+    "NdFeB magnety (kg)": "n/a",
+    "Nd+Pr obsah (kg)": "n/a",
+    "Dy obsah (kg)": "n/a",
+    "Tb obsah (kg)": "n/a",
+    "Celkem REE (kg)": "n/a",
+    "Hodnota REE (USD, ~2025)": "n/a",
+    "Poznámka": "Gd kontrastní látky (~0.1 mmol/kg)"
+  },
+  {
+    "Technologie": "Průmyslový robot",
+    "NdFeB magnety (kg)": "0.5–2",
+    "Nd+Pr obsah (kg)": "0.15–0.6",
+    "Dy obsah (kg)": "0.01–0.05",
+    "Tb obsah (kg)": "0–0.01",
+    "Celkem REE (kg)": "0.2–0.7",
+    "Hodnota REE (USD, ~2025)": "~60–250",
+    "Poznámka": "Servo motory"
+  },
+  {
+    "Technologie": "E-bike motor",
+    "NdFeB magnety (kg)": "0.1–0.3",
+    "Nd+Pr obsah (kg)": "0.03–0.1",
+    "Dy obsah (kg)": "0.005–0.02",
+    "Tb obsah (kg)": "~0",
+    "Celkem REE (kg)": "0.04–0.12",
+    "Hodnota REE (USD, ~2025)": "~12–40",
+    "Poznámka": "Hub / mid-drive motory"
+  },
+  {
+    "Technologie": "AC klimatizace (inverter)",
+    "NdFeB magnety (kg)": "0.05–0.15",
+    "Nd+Pr obsah (kg)": "0.015–0.05",
+    "Dy obsah (kg)": "0.002–0.01",
+    "Tb obsah (kg)": "~0",
+    "Celkem REE (kg)": "0.02–0.06",
+    "Hodnota REE (USD, ~2025)": "~6–20",
+    "Poznámka": "Kompresorový motor"
+  }
+]

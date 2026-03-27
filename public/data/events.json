@@ -1,0 +1,90 @@
+[
+  {
+    "Datum": "2015-06-01",
+    "Udalost": "Molycorp bankrot",
+    "Dy USD/kg": 252.5,
+    "Pr USD/kg": 60.5,
+    "Tb USD/kg": 556.6,
+    "Ce USD/kg": 1.9,
+    "Brent": 64,
+    "Dy 3M chg%": -23.7,
+    "Pr 3M chg%": -20.7
+  },
+  {
+    "Datum": "2017-09-01",
+    "Udalost": "CN enviro crackdown",
+    "Dy USD/kg": 202.4,
+    "Pr USD/kg": 86.4,
+    "Tb USD/kg": 599,
+    "Ce USD/kg": 2.4,
+    "Brent": 51.8,
+    "Dy 3M chg%": -13.3,
+    "Pr 3M chg%": -24.7
+  },
+  {
+    "Datum": "2020-03-01",
+    "Udalost": "COVID-19",
+    "Dy USD/kg": 267.8,
+    "Pr USD/kg": 46.2,
+    "Tb USD/kg": 624.4,
+    "Ce USD/kg": 1.7,
+    "Brent": 51.8,
+    "Dy 3M chg%": 1.8,
+    "Pr 3M chg%": -10.3
+  },
+  {
+    "Datum": "2021-03-01",
+    "Udalost": "REE rally start",
+    "Dy USD/kg": 463.8,
+    "Pr USD/kg": 76.5,
+    "Tb USD/kg": 1538.4,
+    "Ce USD/kg": 1.4,
+    "Brent": 64.2,
+    "Dy 3M chg%": -17.1,
+    "Pr 3M chg%": 5.5
+  },
+  {
+    "Datum": "2022-03-01",
+    "Udalost": "REE peak",
+    "Dy USD/kg": 495.2,
+    "Pr USD/kg": 172.4,
+    "Tb USD/kg": 2396.7,
+    "Ce USD/kg": 1.4,
+    "Brent": 113.2,
+    "Dy 3M chg%": -22.2,
+    "Pr 3M chg%": -15.9
+  },
+  {
+    "Datum": "2023-06-01",
+    "Udalost": "Korekce",
+    "Dy USD/kg": 298.1,
+    "Pr USD/kg": 71.7,
+    "Tb USD/kg": 1188.2,
+    "Ce USD/kg": 0.8,
+    "Brent": 73.6,
+    "Dy 3M chg%": 14,
+    "Pr 3M chg%": -3
+  },
+  {
+    "Datum": "2025-04-01",
+    "Udalost": "CN export controls 7 REE",
+    "Dy USD/kg": 228.4,
+    "Pr USD/kg": 63.2,
+    "Tb USD/kg": 902.6,
+    "Ce USD/kg": 1.8,
+    "Brent": 75.5,
+    "Dy 3M chg%": -1.3,
+    "Pr 3M chg%": 2.1
+  },
+  {
+    "Datum": "2025-10-01",
+    "Udalost": "CN controls rozsireni",
+    "Dy USD/kg": 226.8,
+    "Pr USD/kg": 88.1,
+    "Tb USD/kg": 986.7,
+    "Ce USD/kg": 1.6,
+    "Brent": 65.4,
+    "Dy 3M chg%": -15.5,
+    "Pr 3M chg%": -0.6
+  }
+]

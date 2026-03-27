@@ -1,0 +1,106 @@
+[
+  {
+    "Datum": "2010/09",
+    "Aktér": "Čína",
+    "Opatření": "Neoficiální embargo na REE export do Japonska",
+    "Cíl / Kontext": "Spor o Senkaku/Diaoyu",
+    "Dopad": "Ceny +750%; globální wake-up call",
+    "Typ": "Embargo"
+  },
+  {
+    "Datum": "2012–2014",
+    "Aktér": "Čína",
+    "Opatření": "Formální exportní kvóty a cla",
+    "Cíl / Kontext": "Kontrola nabídky",
+    "Dopad": "WTO prohla Číny (2014)",
+    "Typ": "Kvóty"
+  },
+  {
+    "Datum": "2015",
+    "Aktér": "Čína",
+    "Opatření": "Zrušení kvót; přechod na domácí regulaci",
+    "Cíl / Kontext": "Dodržení WTO",
+    "Dopad": "Vznik systému domácích kvót",
+    "Typ": "Regulace"
+  },
+  {
+    "Datum": "2021/12",
+    "Aktér": "Čína",
+    "Opatření": "Konsolidace Big Six → duopol (CREG + CNRE)",
+    "Cíl / Kontext": "Cenová kontrola",
+    "Dopad": "Efektivnější řízení nabídky a cen",
+    "Typ": "Průmyslová politika"
+  },
+  {
+    "Datum": "2023/08",
+    "Aktér": "Čína",
+    "Opatření": "Licenční požadavky na export Ga a Ge",
+    "Cíl / Kontext": "Signální opatření; test infrastruktury",
+    "Dopad": "Precedent pro REE kontroly",
+    "Typ": "Licence"
+  },
+  {
+    "Datum": "2024/05",
+    "Aktér": "EU",
+    "Opatření": "CRMA vstupuje v platnost",
+    "Cíl / Kontext": "Snížení závislosti",
+    "Dopad": "60 strategických projektů; cíle 2030",
+    "Typ": "Legislativa"
+  },
+  {
+    "Datum": "2025/04",
+    "Aktér": "Čína",
+    "Opatření": "Licence na 7 REE (Sm, Gd, Tb, Dy, Lu, Sc, Y) + magnety",
+    "Cíl / Kontext": "Odveta za Trumpovy tarify",
+    "Dopad": "Okamžitý dopad na dodávky; EU ceny +200%",
+    "Typ": "Licence"
+  },
+  {
+    "Datum": "2025/07",
+    "Aktér": "USA",
+    "Opatření": "DoD získává 15% podíl v MP Materials",
+    "Cíl / Kontext": "Budování US řetězce",
+    "Dopad": "Cenový floor 110 USD/kg NdPr",
+    "Typ": "Investice"
+  },
+  {
+    "Datum": "2025/07",
+    "Aktér": "USA",
+    "Opatření": "Kongres: >7 mld. USD na kritické minerály",
+    "Cíl / Kontext": "One Big Beautiful Bill Act",
+    "Dopad": "Nejmasivnější US investice do REE",
+    "Typ": "Legislativa"
+  },
+  {
+    "Datum": "2025/10",
+    "Aktér": "Čína",
+    "Opatření": "Kontroly na 12+ REE; zákaz exportu technologií; extrateritoriální dosah",
+    "Cíl / Kontext": "Eskalace trade war",
+    "Dopad": "Čínská varianta US FDPR; re-export s ≥0.1% CN REE vyžaduje licenci",
+    "Typ": "Kontroly + technologie"
+  },
+  {
+    "Datum": "2025/11",
+    "Aktér": "Čína",
+    "Opatření": "Částečné pozastavení říjnových kontrol na 1 rok",
+    "Cíl / Kontext": "Taktická flexibilita",
+    "Dopad": "Dubnový licenční režim zůstává; nejistota přetrvává",
+    "Typ": "Pozastavení"
+  },
+  {
+    "Datum": "2025/12",
+    "Aktér": "EU",
+    "Opatření": "RESourceEU: +3 mld. EUR na magnety a baterie",
+    "Cíl / Kontext": "Posílení CRMA",
+    "Dopad": "Cíleno na downstream řetězec",
+    "Typ": "Financování"
+  },
+  {
+    "Datum": "2026/02",
+    "Aktér": "Mezinár.",
+    "Opatření": "MSP → FORGE (Forum on Resource Geostrategic Engagement)",
+    "Cíl / Kontext": "Transformace multilaterální platformy",
+    "Dopad": "15 zemí, 32 projektů (10 REE)",
+    "Typ": "Aliance"
+  }
+]

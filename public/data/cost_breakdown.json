@@ -1,0 +1,82 @@
+[
+  {
+    "Stupeň řetězce": "1. Ruda (in situ)",
+    "Produkt": "REE ruda (~1% REO)",
+    "Typická cena (USD/kg)": "~0.5–1",
+    "Multiplikátor vs. ruda": "1×",
+    "Marže (%)": "10–20%",
+    "Hlavní nákladové faktory": "Těžba, voda, energie, povolení",
+    "Kde je hodnota": "Nízká",
+    "Dominantní hráč": "Čína, Lynas, MP"
+  },
+  {
+    "Stupeň řetězce": "2. Koncentrát",
+    "Produkt": "REE koncentrát (~30–60% REO)",
+    "Typická cena (USD/kg)": "~5–10",
+    "Multiplikátor vs. ruda": "~10×",
+    "Marže (%)": "15–25%",
+    "Hlavní nákladové faktory": "Flotace, gravitace, drcení",
+    "Kde je hodnota": "Nízká",
+    "Dominantní hráč": "Čína, MP Materials"
+  },
+  {
+    "Stupeň řetězce": "3. Smíšený oxid",
+    "Produkt": "Mixed REO",
+    "Typická cena (USD/kg)": "~10–20",
+    "Multiplikátor vs. ruda": "~20×",
+    "Marže (%)": "10–15%",
+    "Hlavní nákladové faktory": "Chemická extrakce, čištění",
+    "Kde je hodnota": "Střední",
+    "Dominantní hráč": "Čína"
+  },
+  {
+    "Stupeň řetězce": "4. Separovaný oxid (NdPr)",
+    "Produkt": "NdPr oxid (99%+)",
+    "Typická cena (USD/kg)": "~73",
+    "Multiplikátor vs. ruda": "~100×",
+    "Marže (%)": "5–15%",
+    "Hlavní nákladové faktory": "Solventní extrakce (200–400 stupňů)",
+    "Kde je hodnota": "Vysoká — klíčový bottleneck",
+    "Dominantní hráč": "Čína (91%)"
+  },
+  {
+    "Stupeň řetězce": "5. Kov / slitina",
+    "Produkt": "NdPr kov",
+    "Typická cena (USD/kg)": "~100–120",
+    "Multiplikátor vs. ruda": "~150×",
+    "Marže (%)": "10–20%",
+    "Hlavní nákladové faktory": "Elektrolýza / metalotermie",
+    "Kde je hodnota": "Vysoká",
+    "Dominantní hráč": "Čína (90%)"
+  },
+  {
+    "Stupeň řetězce": "6. Práškový magnet (NdFeB)",
+    "Produkt": "NdFeB prášek / polotovar",
+    "Typická cena (USD/kg)": "~150–200",
+    "Multiplikátor vs. ruda": "~250×",
+    "Marže (%)": "15–25%",
+    "Hlavní nákladové faktory": "Strip casting, mletí, lisování",
+    "Kde je hodnota": "Velmi vysoká",
+    "Dominantní hráč": "Čína (94%)"
+  },
+  {
+    "Stupeň řetězce": "7. Sintrovaný magnet",
+    "Produkt": "Hotový NdFeB magnet",
+    "Typická cena (USD/kg)": "~200–400",
+    "Multiplikátor vs. ruda": "~400×",
+    "Marže (%)": "20–35%",
+    "Hlavní nákladové faktory": "Sintrování, obrábění, povrchová úprava",
+    "Kde je hodnota": "Nejvyšší — zde je strategická moc",
+    "Dominantní hráč": "Čína (94%), JP (5–7%)"
+  },
+  {
+    "Stupeň řetězce": "8. Motor / komponent",
+    "Produkt": "EV motor s magnety",
+    "Typická cena (USD/kg)": "~500–2 000",
+    "Multiplikátor vs. ruda": "~1 000×",
+    "Marže (%)": "15–30%",
+    "Hlavní nákladové faktory": "Montáž, vinutí, řízení",
+    "Kde je hodnota": "Finální integrace",
+    "Dominantní hráč": "EU, JP, US, CN"
+  }
+]

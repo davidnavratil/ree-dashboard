@@ -1,0 +1,110 @@
+[
+  {
+    "Metrika": "Těžba (kt REO)",
+    "2018": "120",
+    "2020": "140",
+    "2022": "210",
+    "2024e": "270",
+    "2030p": "320–350",
+    "Poznámka": "USGS; kvóty +8%/rok"
+  },
+  {
+    "Metrika": "+ Import (kt, hlavně Myanmar)",
+    "2018": "~20",
+    "2020": "~30",
+    "2022": "~35",
+    "2024e": "~40",
+    "2030p": "30–50",
+    "Poznámka": "Myanmar volatilní (Kačin)"
+  },
+  {
+    "Metrika": "— Domácí spotřeba (kt)",
+    "2018": "~95",
+    "2020": "~115",
+    "2022": "~170",
+    "2024e": "~220",
+    "2030p": "280–330",
+    "Poznámka": "EV+vítr boom doma; ~70→75-80% produkce"
+  },
+  {
+    "Metrika": "Export oxidů/kovů (kt)",
+    "2018": "~40",
+    "2020": "~45",
+    "2022": "~55",
+    "2024e": "~60",
+    "2030p": "50–70",
+    "Poznámka": "Licence limitují"
+  },
+  {
+    "Metrika": "Export NdFeB magnetů (kt)",
+    "2018": "~30",
+    "2020": "~35",
+    "2022": "~45",
+    "2024e": "~58",
+    "2030p": "50–75",
+    "Poznámka": "+10% y/y v 2024"
+  },
+  {
+    "Metrika": "Domácí spotřeba / produkce",
+    "2018": "68%",
+    "2020": "68%",
+    "2022": "70%",
+    "2024e": "71%",
+    "2030p": "75–80%",
+    "Poznámka": "ROSTOUCÍ = méně pro svět"
+  },
+  {
+    "Metrika": "Non-CN poptávka (kt NdPr ekv.)",
+    "2018": "~25",
+    "2020": "~30",
+    "2022": "~40",
+    "2024e": "~50",
+    "2030p": "80–115",
+    "Poznámka": "IEA/McKinsey"
+  },
+  {
+    "Metrika": "Non-CN nabídka (kt NdPr)",
+    "2018": "~5",
+    "2020": "~7",
+    "2022": "~10",
+    "2024e": "~15",
+    "2030p": "25–40",
+    "Poznámka": "Lynas, MP, Iluka, Arafura, Serra Verde"
+  },
+  {
+    "Metrika": "Strukturální non-CN deficit",
+    "2018": "~20",
+    "2020": "~23",
+    "2022": "~30",
+    "2024e": "~35",
+    "2030p": "55–75",
+    "Poznámka": "I BEZ export controls deficit ROSTE"
+  },
+  {
+    "Metrika": "KLÍČOVÝ INSIGHT: I BEZ exportních omezení existuje strukturální deficit.",
+    "2018": null,
+    "2020": null,
+    "2022": null,
+    "2024e": null,
+    "2030p": null,
+    "Poznámka": null
+  },
+  {
+    "Metrika": "Čínská domácí spotřeba roste rychleji než produkce → podíl exportu přirozeně klesá.",
+    "2018": null,
+    "2020": null,
+    "2022": null,
+    "2024e": null,
+    "2030p": null,
+    "Poznámka": null
+  },
+  {
+    "Metrika": "Export controls tento trend ZRYCHLUJÍ a zpolitizovávají, ale NEZPŮSOBUJÍ.",
+    "2018": null,
+    "2020": null,
+    "2022": null,
+    "2024e": null,
+    "2030p": null,
+    "Poznámka": null
+  }
+]

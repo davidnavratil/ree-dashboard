@@ -1,0 +1,56 @@
+[
+  {
+    "Cíl CRMA 2030": "Domácí těžba",
+    "Metrika": "% roční spotřeby EU z EU dolů",
+    "Současný stav (~2025)": "<3%",
+    "Cíl 2030": "≥10%",
+    "Gap": "~7 pp",
+    "Hodnocení reálnosti": "Obtížné (Fen 2031, LKAB 2030+)",
+    "Klíčové projekty": "Fen (NO), Per Geijer (SE)"
+  },
+  {
+    "Cíl CRMA 2030": "Zpracování v EU",
+    "Metrika": "% roční spotřeby zpracováno v EU",
+    "Současný stav (~2025)": "<5%",
+    "Cíl 2030": "≥40%",
+    "Gap": "~35 pp",
+    "Hodnocení reálnosti": "Velmi obtížné (Silmet malý; Solvay expanze)",
+    "Klíčové projekty": "Silmet (EE), Solvay (FR), Eneabba?"
+  },
+  {
+    "Cíl CRMA 2030": "Recyklace",
+    "Metrika": "% roční spotřeby z recyklace",
+    "Současný stav (~2025)": "<1%",
+    "Cíl 2030": "≥25%",
+    "Gap": "~24 pp",
+    "Hodnocení reálnosti": "Extrémně obtížné (z <1% na 25% za 5 let)",
+    "Klíčové projekty": "CAREMAG (FR), ÚOCHB (CZ), HyProMag (UK)"
+  },
+  {
+    "Cíl CRMA 2030": "Diverzifikace",
+    "Metrika": "Max. % z jednoho třetího státu",
+    "Současný stav (~2025)": "~85–98% (CN)",
+    "Cíl 2030": "≤65%",
+    "Gap": "~20–33 pp",
+    "Hodnocení reálnosti": "Obtížné (alternativy nestíhají)",
+    "Klíčové projekty": "Lynas (AU→EU), MP Materials (US), Serra Verde (BR)"
+  },
+  {
+    "Cíl CRMA 2030": "Strategické projekty",
+    "Metrika": "Počet schválených projektů",
+    "Současný stav (~2025)": "60 (03/2025)",
+    "Cíl 2030": "TBD",
+    "Gap": "—",
+    "Hodnocení reálnosti": "Na dobré cestě (administrativně)",
+    "Klíčové projekty": "47 oznámeno 03/2025 + další vlny"
+  },
+  {
+    "Cíl CRMA 2030": "Povolovací řízení",
+    "Metrika": "Max. délka pro strategické projekty",
+    "Současný stav (~2025)": "7–15 let (dnes)",
+    "Cíl 2030": "27 měsíců (těžba) / 15 měsíců (zprac.)",
+    "Gap": "Masivní zrychlení",
+    "Hodnocení reálnosti": "Zatím netestováno v praxi",
+    "Klíčové projekty": "Závisí na členských státech"
+  }
+]

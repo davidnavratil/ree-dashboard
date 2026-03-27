@@ -1,0 +1,58 @@
+{
+  "elements": [
+    {
+      "code": "Ce",
+      "name": "Cer",
+      "fullName": "Ce oxid USD/kg"
+    },
+    {
+      "code": "Dy",
+      "name": "Dysprosium",
+      "fullName": "Dy oxid USD/kg"
+    },
+    {
+      "code": "Pr",
+      "name": "Praseodym",
+      "fullName": "Pr oxid USD/kg"
+    },
+    {
+      "code": "Tb",
+      "name": "Terbium",
+      "fullName": "Tb oxid USD/kg"
+    },
+    {
+      "code": "La",
+      "name": "Lanthan",
+      "fullName": "La oxid USD/kg"
+    },
+    {
+      "code": "Sm",
+      "name": "Samarium",
+      "fullName": "Sm oxid USD/kg"
+    },
+    {
+      "code": "Gd",
+      "name": "Gadolinium",
+      "fullName": "Gd oxid USD/kg"
+    },
+    {
+      "code": "Eu",
+      "name": "Europium",
+      "fullName": "Eu oxid USD/kg"
+    },
+    {
+      "code": "REO",
+      "name": "REO karbonát",
+      "fullName": "REO karb. USD/kg"
+    }
+  ],
+  "units": {
+    "USD": "USD/kg",
+    "CNY": "CNY/kg"
+  },
+  "source": "LSEG Datastream (Asian Metals)",
+  "period": {
+    "start": "2014-01",
+    "end": "2025-12"
+  }
+}

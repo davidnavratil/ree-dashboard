@@ -1,0 +1,101 @@
+[
+  {
+    "Klicove udalosti a cenovy dopad": "Datum",
+    "col_1": "Udalost",
+    "col_2": "Dy USD/kg",
+    "col_3": "Pr USD/kg",
+    "col_4": "Tb USD/kg",
+    "col_5": "Ce USD/kg",
+    "col_6": "Brent",
+    "col_7": "Dy 3M chg%",
+    "col_8": "Pr 3M chg%"
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2015-06-01",
+    "col_1": "Molycorp bankrot",
+    "col_2": 252.5,
+    "col_3": 60.5,
+    "col_4": 556.6,
+    "col_5": 1.9,
+    "col_6": 64,
+    "col_7": -23.7,
+    "col_8": -20.7
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2017-09-01",
+    "col_1": "CN enviro crackdown",
+    "col_2": 202.4,
+    "col_3": 86.4,
+    "col_4": 599,
+    "col_5": 2.4,
+    "col_6": 51.8,
+    "col_7": -13.3,
+    "col_8": -24.7
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2020-03-01",
+    "col_1": "COVID-19",
+    "col_2": 267.8,
+    "col_3": 46.2,
+    "col_4": 624.4,
+    "col_5": 1.7,
+    "col_6": 51.8,
+    "col_7": 1.8,
+    "col_8": -10.3
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2021-03-01",
+    "col_1": "REE rally start",
+    "col_2": 463.8,
+    "col_3": 76.5,
+    "col_4": 1538.4,
+    "col_5": 1.4,
+    "col_6": 64.2,
+    "col_7": -17.1,
+    "col_8": 5.5
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2022-03-01",
+    "col_1": "REE peak",
+    "col_2": 495.2,
+    "col_3": 172.4,
+    "col_4": 2396.7,
+    "col_5": 1.4,
+    "col_6": 113.2,
+    "col_7": -22.2,
+    "col_8": -15.9
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2023-06-01",
+    "col_1": "Korekce",
+    "col_2": 298.1,
+    "col_3": 71.7,
+    "col_4": 1188.2,
+    "col_5": 0.8,
+    "col_6": 73.6,
+    "col_7": 14,
+    "col_8": -3
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2025-04-01",
+    "col_1": "CN export controls 7 REE",
+    "col_2": 228.4,
+    "col_3": 63.2,
+    "col_4": 902.6,
+    "col_5": 1.8,
+    "col_6": 75.5,
+    "col_7": -1.3,
+    "col_8": 2.1
+  },
+  {
+    "Klicove udalosti a cenovy dopad": "2025-10-01",
+    "col_1": "CN controls rozsireni",
+    "col_2": 226.8,
+    "col_3": 88.1,
+    "col_4": 986.7,
+    "col_5": 1.6,
+    "col_6": 65.4,
+    "col_7": -15.5,
+    "col_8": -0.6
+  }
+]

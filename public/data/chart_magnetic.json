@@ -1,0 +1,890 @@
+[
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "Date",
+    "col_1": "Dy oxid",
+    "col_2": "Pr oxid",
+    "col_3": "Tb oxid"
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-01-31",
+    "col_1": 280.73,
+    "col_2": 92.48,
+    "col_3": 536.69
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-02-28",
+    "col_1": 289.81,
+    "col_2": 91.43,
+    "col_3": 555.12
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-03-31",
+    "col_1": 281.83,
+    "col_2": 92.6,
+    "col_3": 531.45
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-04-30",
+    "col_1": 259.61,
+    "col_2": 91.86,
+    "col_3": 495.26
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-05-31",
+    "col_1": 259.83,
+    "col_2": 91.94,
+    "col_3": 495.68
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-06-30",
+    "col_1": 234.19,
+    "col_2": 92.23,
+    "col_3": 481.2
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-07-31",
+    "col_1": 230.9,
+    "col_2": 92.36,
+    "col_3": 437.5
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-08-31",
+    "col_1": 236.03,
+    "col_2": 86.27,
+    "col_3": 439.51
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-09-30",
+    "col_1": 232.21,
+    "col_2": 84.74,
+    "col_3": 439.98
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-10-31",
+    "col_1": 229.09,
+    "col_2": 78.54,
+    "col_3": 417.27
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-11-30",
+    "col_1": 240.27,
+    "col_2": 68.41,
+    "col_3": 456.1
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2014-12-31",
+    "col_1": 246.53,
+    "col_2": 64.45,
+    "col_3": 491.45
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-01-31",
+    "col_1": 257.68,
+    "col_2": 63.22,
+    "col_3": 544.17
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-02-28",
+    "col_1": 279.58,
+    "col_2": 63.11,
+    "col_3": 631.06
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-03-31",
+    "col_1": 284.93,
+    "col_2": 66.4,
+    "col_3": 643.9
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-04-30",
+    "col_1": 268.58,
+    "col_2": 63.31,
+    "col_3": 596.84
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-05-31",
+    "col_1": 259.62,
+    "col_2": 60.47,
+    "col_3": 564.4
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-06-30",
+    "col_1": 237.63,
+    "col_2": 58.4,
+    "col_3": 543.73
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-07-31",
+    "col_1": 204.54,
+    "col_2": 52.34,
+    "col_3": 450.96
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-08-31",
+    "col_1": 191.08,
+    "col_2": 47.57,
+    "col_3": 382.16
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-09-30",
+    "col_1": 202.92,
+    "col_2": 48.14,
+    "col_3": 361.8
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-10-31",
+    "col_1": 215.43,
+    "col_2": 49.53,
+    "col_3": 377.4
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-11-30",
+    "col_1": 216.77,
+    "col_2": 48.52,
+    "col_3": 387.37
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2015-12-31",
+    "col_1": 208.75,
+    "col_2": 47.53,
+    "col_3": 372.82
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-01-31",
+    "col_1": 195.35,
+    "col_2": 45.99,
+    "col_3": 353.46
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-02-29",
+    "col_1": 196.73,
+    "col_2": 46.31,
+    "col_3": 355.96
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-03-31",
+    "col_1": 185.61,
+    "col_2": 46.79,
+    "col_3": 347.25
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-04-30",
+    "col_1": 187.07,
+    "col_2": 46.57,
+    "col_3": 354.12
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-05-31",
+    "col_1": 200.64,
+    "col_2": 48.82,
+    "col_3": 442.47
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-06-30",
+    "col_1": 188.35,
+    "col_2": 47.09,
+    "col_3": 406.83
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-07-31",
+    "col_1": 181.41,
+    "col_2": 45.73,
+    "col_3": 401.05
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-08-31",
+    "col_1": 182.65,
+    "col_2": 46.79,
+    "col_3": 407.98
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-09-30",
+    "col_1": 182.02,
+    "col_2": 47.04,
+    "col_3": 408.23
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-10-31",
+    "col_1": 177.96,
+    "col_2": 46.15,
+    "col_3": 399.49
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-11-30",
+    "col_1": 178.6,
+    "col_2": 46.1,
+    "col_3": 416.01
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2016-12-31",
+    "col_1": 173.87,
+    "col_2": 46.7,
+    "col_3": 413.11
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-01-31",
+    "col_1": 172.87,
+    "col_2": 47.21,
+    "col_3": 414.03
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-02-28",
+    "col_1": 176.66,
+    "col_2": 49.07,
+    "col_3": 447.09
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-03-31",
+    "col_1": 176.34,
+    "col_2": 52.25,
+    "col_3": 471.7
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-04-30",
+    "col_1": 177.73,
+    "col_2": 53.25,
+    "col_3": 486.02
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-05-31",
+    "col_1": 176.94,
+    "col_2": 53.96,
+    "col_3": 535.97
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-06-30",
+    "col_1": 170.59,
+    "col_2": 55.52,
+    "col_3": 558.84
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-07-31",
+    "col_1": 184.34,
+    "col_2": 68.11,
+    "col_3": 581.15
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-08-31",
+    "col_1": 202.45,
+    "col_2": 86.44,
+    "col_3": 599
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-09-30",
+    "col_1": 176.14,
+    "col_2": 84.31,
+    "col_3": 568.31
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-10-31",
+    "col_1": 176.98,
+    "col_2": 76.07,
+    "col_3": 504.59
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-11-30",
+    "col_1": 175.51,
+    "col_2": 65.06,
+    "col_3": 446.34
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2017-12-31",
+    "col_1": 175.39,
+    "col_2": 62.53,
+    "col_3": 430.85
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-01-31",
+    "col_1": 187.64,
+    "col_2": 67.58,
+    "col_3": 488.96
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-02-28",
+    "col_1": 188.75,
+    "col_2": 69.5,
+    "col_3": 501.5
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-03-31",
+    "col_1": 189.75,
+    "col_2": 70.66,
+    "col_3": 512.08
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-04-30",
+    "col_1": 182.56,
+    "col_2": 68.76,
+    "col_3": 474.19
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-05-31",
+    "col_1": 179.93,
+    "col_2": 66.21,
+    "col_3": 475.15
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-06-30",
+    "col_1": 177.15,
+    "col_2": 64.35,
+    "col_3": 465.58
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-07-31",
+    "col_1": 170.61,
+    "col_2": 60.56,
+    "col_3": 432.07
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-08-31",
+    "col_1": 167.49,
+    "col_2": 60.11,
+    "col_3": 428.81
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-09-30",
+    "col_1": 167.55,
+    "col_2": 59.61,
+    "col_3": 425.23
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-10-31",
+    "col_1": 164.5,
+    "col_2": 57.7,
+    "col_3": 417.17
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-11-30",
+    "col_1": 176.88,
+    "col_2": 57.16,
+    "col_3": 427.82
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2018-12-31",
+    "col_1": 175.73,
+    "col_2": 57.73,
+    "col_3": 429.17
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-01-31",
+    "col_1": 180.15,
+    "col_2": 59.18,
+    "col_3": 436.98
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-02-28",
+    "col_1": 188.42,
+    "col_2": 59.44,
+    "col_3": 441.14
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-03-31",
+    "col_1": 218.52,
+    "col_2": 56.49,
+    "col_3": 464.54
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-04-30",
+    "col_1": 220.92,
+    "col_2": 52.81,
+    "col_3": 469.36
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-05-31",
+    "col_1": 285.63,
+    "col_2": 51.34,
+    "col_3": 524.26
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-06-30",
+    "col_1": 285.61,
+    "col_2": 58.87,
+    "col_3": 599.56
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-07-31",
+    "col_1": 270.19,
+    "col_2": 56.65,
+    "col_3": 567.97
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-08-31",
+    "col_1": 266.56,
+    "col_2": 53.38,
+    "col_3": 547.78
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-09-30",
+    "col_1": 261.51,
+    "col_2": 53.63,
+    "col_3": 541.94
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-10-31",
+    "col_1": 221.82,
+    "col_2": 50.32,
+    "col_3": 499.62
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-11-30",
+    "col_1": 230.47,
+    "col_2": 47.66,
+    "col_3": 487.27
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2019-12-31",
+    "col_1": 250.38,
+    "col_2": 49,
+    "col_3": 505.05
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-01-31",
+    "col_1": 245.08,
+    "col_2": 47.57,
+    "col_3": 508.17
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-02-29",
+    "col_1": 258.45,
+    "col_2": 45.57,
+    "col_3": 566.03
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-03-31",
+    "col_1": 262.83,
+    "col_2": 44.98,
+    "col_3": 593.83
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-04-30",
+    "col_1": 252.23,
+    "col_2": 43.1,
+    "col_3": 553.22
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-05-31",
+    "col_1": 270.59,
+    "col_2": 41.15,
+    "col_3": 582.32
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-06-30",
+    "col_1": 271.26,
+    "col_2": 43.8,
+    "col_3": 652
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-07-31",
+    "col_1": 264.93,
+    "col_2": 42.49,
+    "col_3": 660.55
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-08-31",
+    "col_1": 261.4,
+    "col_2": 49.01,
+    "col_3": 718.85
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-09-30",
+    "col_1": 247.39,
+    "col_2": 47.49,
+    "col_3": 710.52
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-10-31",
+    "col_1": 248.18,
+    "col_2": 47.18,
+    "col_3": 722.99
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-11-30",
+    "col_1": 280.44,
+    "col_2": 54.72,
+    "col_3": 927.19
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2020-12-31",
+    "col_1": 297.4,
+    "col_2": 55.57,
+    "col_3": 1111.4
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-01-31",
+    "col_1": 339.32,
+    "col_2": 63.24,
+    "col_3": 1353.41
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-02-28",
+    "col_1": 402.69,
+    "col_2": 70.47,
+    "col_3": 1409.42
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-03-31",
+    "col_1": 466.22,
+    "col_2": 79.36,
+    "col_3": 1472.69
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-04-30",
+    "col_1": 409.02,
+    "col_2": 82.96,
+    "col_3": 1257.94
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-05-31",
+    "col_1": 379.4,
+    "col_2": 80.57,
+    "col_3": 1024.77
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-06-30",
+    "col_1": 360.06,
+    "col_2": 83.09,
+    "col_3": 967.91
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-07-31",
+    "col_1": 402.1,
+    "col_2": 98.6,
+    "col_3": 1213.25
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-08-31",
+    "col_1": 403.03,
+    "col_2": 101.53,
+    "col_3": 1243.05
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-09-30",
+    "col_1": 415.69,
+    "col_2": 101.61,
+    "col_3": 1352.17
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-10-31",
+    "col_1": 444.26,
+    "col_2": 114.97,
+    "col_3": 1462.61
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-11-30",
+    "col_1": 457.58,
+    "col_2": 132.19,
+    "col_3": 1681.7
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2021-12-31",
+    "col_1": 453.8,
+    "col_2": 138.18,
+    "col_3": 1742.98
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-01-31",
+    "col_1": 480.15,
+    "col_2": 151.09,
+    "col_3": 2159.5
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-02-28",
+    "col_1": 497.23,
+    "col_2": 172.6,
+    "col_3": 2422.8
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-03-31",
+    "col_1": 433.23,
+    "col_2": 153.6,
+    "col_3": 2111.02
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-04-30",
+    "col_1": 394.78,
+    "col_2": 132.61,
+    "col_3": 2194.94
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-05-31",
+    "col_1": 386.98,
+    "col_2": 141.94,
+    "col_3": 2159.04
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-06-30",
+    "col_1": 370.15,
+    "col_2": 145.52,
+    "col_3": 2097.01
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-07-31",
+    "col_1": 346.97,
+    "col_2": 127.99,
+    "col_3": 2049.27
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-08-31",
+    "col_1": 315.66,
+    "col_2": 97.24,
+    "col_3": 1864.91
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-09-30",
+    "col_1": 316.64,
+    "col_2": 99.99,
+    "col_3": 1784.6
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-10-31",
+    "col_1": 326.23,
+    "col_2": 101.77,
+    "col_3": 1864.64
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-11-30",
+    "col_1": 322.88,
+    "col_2": 95.17,
+    "col_3": 1843.51
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2022-12-31",
+    "col_1": 356.8,
+    "col_2": 99.59,
+    "col_3": 1998.94
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-01-31",
+    "col_1": 361.12,
+    "col_2": 103.91,
+    "col_3": 2048.79
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-02-28",
+    "col_1": 320.65,
+    "col_2": 100.11,
+    "col_3": 1835.39
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-03-31",
+    "col_1": 291.85,
+    "col_2": 79.13,
+    "col_3": 1401.17
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-04-30",
+    "col_1": 275.74,
+    "col_2": 65.69,
+    "col_3": 1212.68
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-05-31",
+    "col_1": 298.1,
+    "col_2": 71.71,
+    "col_3": 1188.19
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-06-30",
+    "col_1": 310.58,
+    "col_2": 67.64,
+    "col_3": 1194.02
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-07-31",
+    "col_1": 320.24,
+    "col_2": 65.03,
+    "col_3": 1006.86
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-08-31",
+    "col_1": 339.73,
+    "col_2": 69.59,
+    "col_3": 1104.98
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-09-30",
+    "col_1": 366.57,
+    "col_2": 72.49,
+    "col_3": 1169.47
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-10-31",
+    "col_1": 364.89,
+    "col_2": 71.41,
+    "col_3": 1124.06
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-11-30",
+    "col_1": 373.72,
+    "col_2": 69.42,
+    "col_3": 1083.31
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2023-12-31",
+    "col_1": 357.1,
+    "col_2": 64.77,
+    "col_3": 1071.29
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-01-31",
+    "col_1": 267.17,
+    "col_2": 57.2,
+    "col_3": 784.07
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-02-29",
+    "col_1": 257.71,
+    "col_2": 54.18,
+    "col_3": 757.15
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-03-31",
+    "col_1": 251.82,
+    "col_2": 49.81,
+    "col_3": 736.79
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-04-30",
+    "col_1": 275.32,
+    "col_2": 54.65,
+    "col_3": 879.79
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-05-31",
+    "col_1": 268.31,
+    "col_2": 52.83,
+    "col_3": 848.37
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-06-30",
+    "col_1": 248.4,
+    "col_2": 50.64,
+    "col_3": 736.24
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-07-31",
+    "col_1": 236.85,
+    "col_2": 51.53,
+    "col_3": 703.63
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-08-31",
+    "col_1": 240.68,
+    "col_2": 57.26,
+    "col_3": 757.83
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-09-30",
+    "col_1": 251.7,
+    "col_2": 61.15,
+    "col_3": 833.3
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-10-31",
+    "col_1": 246.64,
+    "col_2": 60.43,
+    "col_3": 839.72
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-11-30",
+    "col_1": 230.45,
+    "col_2": 58.79,
+    "col_3": 793.47
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2024-12-31",
+    "col_1": 218.55,
+    "col_2": 57,
+    "col_3": 763.21
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-01-31",
+    "col_1": 229.61,
+    "col_2": 58.75,
+    "col_3": 819.16
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-02-28",
+    "col_1": 238.29,
+    "col_2": 64.32,
+    "col_3": 865
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-03-31",
+    "col_1": 224.95,
+    "col_2": 63.15,
+    "col_3": 891.56
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-04-30",
+    "col_1": 220.04,
+    "col_2": 59.27,
+    "col_3": 926.24
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-05-31",
+    "col_1": 225.86,
+    "col_2": 62.06,
+    "col_3": 993.77
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-06-30",
+    "col_1": 225.73,
+    "col_2": 64.37,
+    "col_3": 991.4
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-07-31",
+    "col_1": 227.96,
+    "col_2": 75.62,
+    "col_3": 988.3
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-08-31",
+    "col_1": 225.74,
+    "col_2": 89.81,
+    "col_3": 985.42
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-09-30",
+    "col_1": 226.44,
+    "col_2": 89.52,
+    "col_3": 997.6
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-10-31",
+    "col_1": 218.36,
+    "col_2": 77.83,
+    "col_3": 922.73
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-11-30",
+    "col_1": 209.16,
+    "col_2": 80.91,
+    "col_3": 922.13
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2025-12-31",
+    "col_1": 191.6,
+    "col_2": 87.65,
+    "col_3": 854.34
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2026-01-31",
+    "col_1": 202.98,
+    "col_2": 107.25,
+    "col_3": 896.15
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2026-02-28",
+    "col_1": 238.74,
+    "col_2": 137.93,
+    "col_3": 942.58
+  },
+  {
+    "Magneticke REE — mesicni ceny USD/kg": "2026-03-31",
+    "col_1": 201.4,
+    "col_2": 113.74,
+    "col_3": 880.96
+  }
+]

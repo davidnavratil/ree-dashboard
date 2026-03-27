@@ -1,0 +1,145 @@
+[
+  {
+    "Projekt": "MP Materials",
+    "Země": "US",
+    "Fáze": "Operační+expanze",
+    "Capex (mil. USD)": "~700 (magnety)",
+    "Breakeven NdPr (USD/kg)": "~40–50",
+    "Kapacita (tpa)": "5k→10k (magnety 2028)",
+    "Financování": "DoD 400m + vlastní",
+    "Start": "Separace: 2024; Magnety: 2028",
+    "Zdroj dat": "SEC 10-K"
+  },
+  {
+    "Projekt": "Lynas",
+    "Země": "AU/MY",
+    "Fáze": "Operační; expanze",
+    "Capex (mil. USD)": "~500 (expanze)",
+    "Breakeven NdPr (USD/kg)": "~35–45",
+    "Kapacita (tpa)": "5.3k→12k NdPr",
+    "Financování": "Vlastní + JP JOGMEC 250m",
+    "Start": "HREE: 2025-26; 12k: 2026",
+    "Zdroj dat": "ASX Annual Report"
+  },
+  {
+    "Projekt": "Iluka Eneabba",
+    "Země": "AU",
+    "Fáze": "Výstavba",
+    "Capex (mil. USD)": "~700 (1.65 mld AUD)",
+    "Breakeven NdPr (USD/kg)": "~50–60",
+    "Kapacita (tpa)": "~4k REO",
+    "Financování": "Vládní úvěr AU 1.25 mld AUD",
+    "Start": "2027",
+    "Zdroj dat": "ASX filings"
+  },
+  {
+    "Projekt": "Arafura Nolans",
+    "Země": "AU",
+    "Fáze": "Příprava",
+    "Capex (mil. USD)": "~1 000",
+    "Breakeven NdPr (USD/kg)": "~45–55",
+    "Kapacita (tpa)": "~4.5k NdPr",
+    "Financování": "DE+KR offtake; hledá financování",
+    "Start": "2029",
+    "Zdroj dat": "DFS 2023"
+  },
+  {
+    "Projekt": "Serra Verde",
+    "Země": "BR",
+    "Fáze": "Spuštěno 2025",
+    "Capex (mil. USD)": "~500",
+    "Breakeven NdPr (USD/kg)": "~40–50",
+    "Kapacita (tpa)": "~5k NdPr",
+    "Financování": "Denham Capital (US PE) + BNDES",
+    "Start": "2025",
+    "Zdroj dat": "Veřejné oznámení"
+  },
+  {
+    "Projekt": "Neo Narva (magnety)",
+    "Země": "EE",
+    "Fáze": "Operační 09/2025",
+    "Capex (mil. USD)": "~100",
+    "Breakeven NdPr (USD/kg)": "n/a",
+    "Kapacita (tpa)": "2k (sintr. magnety)",
+    "Financování": "Vlastní",
+    "Start": "Otevřeno",
+    "Zdroj dat": "Firemní PR"
+  },
+  {
+    "Projekt": "Fen deposit",
+    "Země": "NO",
+    "Fáze": "Průzkum",
+    "Capex (mil. USD)": "TBD (>500)",
+    "Breakeven NdPr (USD/kg)": "TBD",
+    "Kapacita (tpa)": "15.9 mil. t resource",
+    "Financování": "TBD",
+    "Start": "~2031",
+    "Zdroj dat": "REE Minerals AS"
+  },
+  {
+    "Projekt": "VAC magnet plant",
+    "Země": "US/DE",
+    "Fáze": "Výstavba",
+    "Capex (mil. USD)": ">500",
+    "Breakeven NdPr (USD/kg)": "n/a",
+    "Kapacita (tpa)": "TBD (magnety)",
+    "Financování": "DoD podpora",
+    "Start": "2027-28",
+    "Zdroj dat": "Veřejné"
+  },
+  {
+    "Projekt": "CAREMAG (recyklace)",
+    "Země": "FR",
+    "Fáze": "CRMA projekt",
+    "Capex (mil. USD)": "~150",
+    "Breakeven NdPr (USD/kg)": "n/a",
+    "Kapacita (tpa)": "1.4k REO z EoL",
+    "Financování": "EU + FR",
+    "Start": "2027-28",
+    "Zdroj dat": "CRMA"
+  },
+  {
+    "Projekt": "Energy Fuels",
+    "Země": "US",
+    "Fáze": "Pilotní",
+    "Capex (mil. USD)": "~50–100",
+    "Breakeven NdPr (USD/kg)": "TBD",
+    "Kapacita (tpa)": "~1k REO",
+    "Financování": "Vlastní",
+    "Start": "Pilotní běží",
+    "Zdroj dat": "SEC filings"
+  },
+  {
+    "Projekt": "Breakeven NdPr ~40–60 USD/kg vs. aktuální cena ~73 USD/kg → projekty jsou ZISKOVÉ.",
+    "Země": null,
+    "Fáze": null,
+    "Capex (mil. USD)": null,
+    "Breakeven NdPr (USD/kg)": null,
+    "Kapacita (tpa)": null,
+    "Financování": null,
+    "Start": null,
+    "Zdroj dat": null
+  },
+  {
+    "Projekt": "DoD price floor 110 USD/kg pro MP Materials = téměř 2× trh → bezpečnostní margin pro US řetězec.",
+    "Země": null,
+    "Fáze": null,
+    "Capex (mil. USD)": null,
+    "Breakeven NdPr (USD/kg)": null,
+    "Kapacita (tpa)": null,
+    "Financování": null,
+    "Start": null,
+    "Zdroj dat": null
+  },
+  {
+    "Projekt": "Většina projektů vyžaduje státní podporu — čistě tržní financování je obtížné kvůli čínské cenové dominanci.",
+    "Země": null,
+    "Fáze": null,
+    "Capex (mil. USD)": null,
+    "Breakeven NdPr (USD/kg)": null,
+    "Kapacita (tpa)": null,
+    "Financování": null,
+    "Start": null,
+    "Zdroj dat": null
+  }
+]

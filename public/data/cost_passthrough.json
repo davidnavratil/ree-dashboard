@@ -1,0 +1,112 @@
+[
+  {
+    "Produkt": "BEV sedan",
+    "REE materiál (kg)": "~1 kg NdPr + 0.05 Dy",
+    "Cena REE (USD)": "~90–130",
+    "Cena komponentu (USD)": "~1 500–3 000",
+    "Cena produktu (USD)": "35 000–45 000",
+    "REE/komponent (%)": "4–8%",
+    "REE/produkt (%)": "0.2–0.4%",
+    "Dopad 3× zdražení": "+$150–300 (+0.5%)",
+    "Klíč. insight": "Cenově marginální; supply kritický"
+  },
+  {
+    "Produkt": "BEV SUV dual",
+    "REE materiál (kg)": "~2 kg NdPr + 0.15 Dy",
+    "Cena REE (USD)": "~200–350",
+    "Cena komponentu (USD)": "~3 000–5 000",
+    "Cena produktu (USD)": "50 000–70 000",
+    "REE/komponent (%)": "5–10%",
+    "REE/produkt (%)": "0.3–0.5%",
+    "Dopad 3× zdražení": "+$300–600 (+0.7%)",
+    "Klíč. insight": "Více motorů = více expozice"
+  },
+  {
+    "Produkt": "Offshore turbína 12MW",
+    "REE materiál (kg)": "~600 kg NdPr + 40 Dy",
+    "Cena REE (USD)": "~80k–120k",
+    "Cena komponentu (USD)": "~500k",
+    "Cena produktu (USD)": "15–20 mil.",
+    "REE/komponent (%)": "16–24%",
+    "REE/produkt (%)": "0.5–0.8%",
+    "Dopad 3× zdražení": "+$150k–250k (+1.2%)",
+    "Klíč. insight": "Nejvyšší REE podíl na komponentu"
+  },
+  {
+    "Produkt": "Průmyslový robot",
+    "REE materiál (kg)": "~1.5 kg NdPr",
+    "Cena REE (USD)": "~130–200",
+    "Cena komponentu (USD)": "~5k–15k",
+    "Cena produktu (USD)": "50k–150k",
+    "REE/komponent (%)": "1–4%",
+    "REE/produkt (%)": "0.1–0.3%",
+    "Dopad 3× zdražení": "+$200–400",
+    "Klíč. insight": "6 servo motorů"
+  },
+  {
+    "Produkt": "F-35 stíhačka",
+    "REE materiál (kg)": "~400+ kg REE mix",
+    "Cena REE (USD)": "~500k+",
+    "Cena komponentu (USD)": "n/a",
+    "Cena produktu (USD)": "~80 mil.",
+    "REE/komponent (%)": "n/a",
+    "REE/produkt (%)": "<1%",
+    "Dopad 3× zdražení": "Irelevantní",
+    "Klíč. insight": "Dostupnost = vše; rozpočet absorbuje"
+  },
+  {
+    "Produkt": "Smartphone",
+    "REE materiál (kg)": "~0.003 kg",
+    "Cena REE (USD)": "~$0.50",
+    "Cena komponentu (USD)": "~$5–10",
+    "Cena produktu (USD)": "~$800–1200",
+    "REE/komponent (%)": "5–10%",
+    "REE/produkt (%)": "<0.1%",
+    "Dopad 3× zdražení": "Zanedbatelný",
+    "Klíč. insight": "Supply, ne cena"
+  },
+  {
+    "Produkt": "Klimatizace inv.",
+    "REE materiál (kg)": "~0.1 kg NdPr",
+    "Cena REE (USD)": "~$8–12",
+    "Cena komponentu (USD)": "~$300–500",
+    "Cena produktu (USD)": "~$1k–3k",
+    "REE/komponent (%)": "2–4%",
+    "REE/produkt (%)": "0.3–1.0%",
+    "Dopad 3× zdražení": "+$16–24 (+1.5%)",
+    "Klíč. insight": "Masový trh; citlivější"
+  },
+  {
+    "Produkt": "→ REE NEJSOU cenový problém. Jsou DOSTUPNOSTNÍ problém.",
+    "REE materiál (kg)": null,
+    "Cena REE (USD)": null,
+    "Cena komponentu (USD)": null,
+    "Cena produktu (USD)": null,
+    "REE/komponent (%)": null,
+    "REE/produkt (%)": null,
+    "Dopad 3× zdražení": null,
+    "Klíč. insight": null
+  },
+  {
+    "Produkt": "→ Poptávka po REE je cenově NEELASTICKÁ — pokud Dy chybí, motor se nevyrobí, bez ohledu na cenu.",
+    "REE materiál (kg)": null,
+    "Cena REE (USD)": null,
+    "Cena komponentu (USD)": null,
+    "Cena produktu (USD)": null,
+    "REE/komponent (%)": null,
+    "REE/produkt (%)": null,
+    "Dopad 3× zdražení": null,
+    "Klíč. insight": null
+  },
+  {
+    "Produkt": "→ To je fundamentální rozdíl od ropy (kde vysoká cena tlumí poptávku a stimuluje alternativy).",
+    "REE materiál (kg)": null,
+    "Cena REE (USD)": null,
+    "Cena komponentu (USD)": null,
+    "Cena produktu (USD)": null,
+    "REE/komponent (%)": null,
+    "REE/produkt (%)": null,
+    "Dopad 3× zdražení": null,
+    "Klíč. insight": null
+  }
+]
