@@ -13,6 +13,7 @@ import {
   Cell,
 } from 'recharts'
 import type { DemandRow } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 
 interface MaterialIntensity {
@@ -27,38 +28,45 @@ interface Props {
   demand: DemandRow[]
   materialIntensity: MaterialIntensity[]
   projections: Projection[]
+  dict: Dictionary
+  lang: string
 }
 
 const ELEMENTS = ['Nd', 'Pr', 'Dy', 'Tb', 'La', 'Ce', 'Sm', 'Y', 'Gd', 'Sc']
 const DOTS_TO_VALUE: Record<string, number> = { '●●●': 3, '●●': 2, '●': 1, '—': 0 }
 
-const TREND_COLORS: Record<string, string> = {
-  'Nejrychlejší růst': '#9D174D',
-  'Rychlý růst': '#D97706',
-  'Mírný růst': '#0E7490',
-  'Stabilní': '#64748B',
-  'Pokles': '#0E7490',
+function getTrendColor(trend: string, trendLabels: Dictionary['demand']['trendLabels']): string {
+  const t = trend?.toLowerCase() ?? ''
+  if (trend === trendLabels.fastest || t.includes('nejrychlej') || t.includes('fastest')) return '#9D174D'
+  if (trend === trendLabels.fast || t.includes('rychlý') || t.includes('fast')) return '#D97706'
+  if (trend === trendLabels.moderate || t.includes('mírn') || t.includes('moderate')) return '#0E7490'
+  if (trend === trendLabels.stable || t.includes('stabil') || t.includes('stálý') || t.includes('stable')) return '#64748B'
+  if (trend === trendLabels.decline || t.includes('klesaj') || t.includes('decline') || t.includes('declining')) return '#0E7490'
+  if (t.includes('strategick') || t.includes('strategic') || t.includes('kritick') || t.includes('critical')) return '#9D174D'
+  if (t.includes('vznikaj') || t.includes('emerging') || t.includes('růst') || t.includes('growth')) return '#D97706'
+  return '#64748B'
 }
 
-function DemandHeatmap({ demand }: { demand: DemandRow[] }) {
+function DemandHeatmap({ demand, dict }: { demand: DemandRow[]; dict: Dictionary }) {
+  const t = dict.demand
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-xs">
         <thead>
           <tr className="border-b border-[#E2E8F0]">
-            <th className="px-2 py-2 text-left text-[#64748B]">Sektor</th>
+            <th className="px-2 py-2 text-left text-[#64748B]">{t.sectorHeaders.sector}</th>
             {ELEMENTS.map(el => (
               <th key={el} className="px-1 py-2 text-center text-[#64748B]">{el}</th>
             ))}
-            <th className="px-2 py-2 text-right text-[#64748B]">Podíl hodnoty</th>
-            <th className="px-2 py-2 text-left text-[#64748B]">Trend</th>
+            <th className="px-2 py-2 text-right text-[#64748B]">{t.sectorHeaders.valueShare}</th>
+            <th className="px-2 py-2 text-left text-[#64748B]">{t.sectorHeaders.trend}</th>
           </tr>
         </thead>
         <tbody>
           {demand.map((row, i) => (
             <tr key={i} className="border-b border-[#E2E8F0]/50 hover:bg-[#F1F5F9]">
               <td className="px-2 py-2 font-medium text-[#0F172A] whitespace-nowrap">
-                {row.Sektor as string}
+                {(t.sectorNameMap as Record<string, string>)?.[row.Sektor as string] ?? row.Sektor as string}
               </td>
               {ELEMENTS.map(el => {
                 const val = DOTS_TO_VALUE[row[el] as string] ?? 0
@@ -85,11 +93,11 @@ function DemandHeatmap({ demand }: { demand: DemandRow[] }) {
                 <span
                   className="rounded-full px-2 py-0.5 text-[10px] font-medium"
                   style={{
-                    backgroundColor: `${TREND_COLORS[row.Trend as string] ?? '#64748B'}15`,
-                    color: TREND_COLORS[row.Trend as string] ?? '#64748B',
+                    backgroundColor: `${getTrendColor(row.Trend as string, t.trendLabels)}15`,
+                    color: getTrendColor(row.Trend as string, t.trendLabels),
                   }}
                 >
-                  {row.Trend as string}
+                  {(t.trendMap as Record<string, string>)?.[row.Trend as string] ?? row.Trend as string}
                 </span>
               </td>
             </tr>
@@ -100,8 +108,9 @@ function DemandHeatmap({ demand }: { demand: DemandRow[] }) {
   )
 }
 
-function MaterialIntensityCards({ data }: { data: MaterialIntensity[] }) {
+function MaterialIntensityCards({ data, dict }: { data: MaterialIntensity[]; dict: Dictionary }) {
   const [expanded, setExpanded] = useState<number | null>(null)
+  const t = dict.demand
 
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -111,12 +120,12 @@ function MaterialIntensityCards({ data }: { data: MaterialIntensity[] }) {
           onClick={() => setExpanded(expanded === i ? null : i)}
           className="rounded-lg border border-[#E2E8F0] bg-white p-4 text-left transition-all hover:bg-[#F1F5F9] hover:shadow-sm"
         >
-          <p className="text-sm font-bold text-[#0F172A]">{item.Technologie as string}</p>
+          <p className="text-sm font-bold text-[#0F172A]">{(t.technologyNameMap as Record<string, string>)?.[item.Technologie as string] ?? item.Technologie as string}</p>
           <div className="mt-2 flex items-baseline gap-2">
             <span className="font-mono text-lg font-bold text-[#0E7490]">
               {item['NdFeB magnety (kg)'] as string}
             </span>
-            <span className="text-xs text-[#64748B]">kg NdFeB</span>
+            <span className="text-xs text-[#64748B]">{t.materialUnit}</span>
           </div>
           <p className="mt-1 text-xs text-[#D97706]">
             {item['Hodnota REE (USD, ~2025)'] as string} USD
@@ -126,7 +135,7 @@ function MaterialIntensityCards({ data }: { data: MaterialIntensity[] }) {
               <p>Nd+Pr: {item['Nd+Pr obsah (kg)'] as string} kg</p>
               <p>Dy: {item['Dy obsah (kg)'] as string} kg</p>
               <p>Tb: {item['Tb obsah (kg)'] as string} kg</p>
-              <p className="text-[10px] text-[#94A3B8]">{item['Poznámka'] as string}</p>
+              <p className="text-[10px] text-[#94A3B8]">{(t.noteMap as Record<string, string>)?.[item['Poznámka'] as string] ?? item['Poznámka'] as string}</p>
             </div>
           )}
         </button>
@@ -135,29 +144,30 @@ function MaterialIntensityCards({ data }: { data: MaterialIntensity[] }) {
   )
 }
 
-function ProjectionsTable({ data }: { data: Projection[] }) {
+function ProjectionsTable({ data, dict }: { data: Projection[]; dict: Dictionary }) {
+  const t = dict.demand
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-xs">
         <thead>
           <tr className="border-b border-[#E2E8F0]">
-            <th className="px-2 py-2 text-left text-[#64748B]">Zdroj / Scénář</th>
-            <th className="px-2 py-2 text-left text-[#64748B]">Metrika</th>
+            <th className="px-2 py-2 text-left text-[#64748B]">{t.projectionsHeaders.sourceScenario}</th>
+            <th className="px-2 py-2 text-left text-[#64748B]">{t.projectionsHeaders.metric}</th>
             <th className="px-2 py-2 text-right text-[#64748B]">2024</th>
             <th className="px-2 py-2 text-right text-[#64748B]">2030</th>
             <th className="px-2 py-2 text-right text-[#64748B]">2035</th>
             <th className="px-2 py-2 text-right text-[#64748B]">2040</th>
-            <th className="px-2 py-2 text-right text-[#64748B]">CAGR</th>
+            <th className="px-2 py-2 text-right text-[#64748B]">{t.projectionsHeaders.cagr}</th>
           </tr>
         </thead>
         <tbody>
           {data.map((row, i) => (
             <tr key={i} className="border-b border-[#E2E8F0]/50 hover:bg-[#F1F5F9]">
               <td className="px-2 py-2 font-medium text-[#0F172A] whitespace-nowrap">
-                {row['Zdroj / Scénář'] as string}
+                {(t.projectionSourceMap as Record<string, string>)?.[row['Zdroj / Scénář'] as string] ?? row['Zdroj / Scénář'] as string}
               </td>
               <td className="px-2 py-2 text-[#475569] max-w-[200px] truncate">
-                {row.Metrika as string}
+                {(t.projectionMetricMap as Record<string, string>)?.[row.Metrika as string] ?? row.Metrika as string}
               </td>
               <td className="px-2 py-2 text-right font-mono text-[#475569]">{row['2024'] as string}</td>
               <td className="px-2 py-2 text-right font-mono font-medium text-[#0E7490]">{row['2030'] as string}</td>
@@ -172,46 +182,45 @@ function ProjectionsTable({ data }: { data: Projection[] }) {
   )
 }
 
-export default function DemandClient({ demand, materialIntensity, projections }: Props) {
+export default function DemandClient({ demand, materialIntensity, projections, dict, lang }: Props) {
+  const t = dict.demand
+
   return (
     <div className="space-y-8">
       {/* Demand Heatmap */}
       <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
         <h3 className="mb-2 text-lg font-bold text-[#0F172A]">
-          Poptávka podle sektorů a prvků
+          {t.sectorTitle}
         </h3>
         <p className="mb-4 text-xs text-[#64748B]">
-          Intenzita spotřeby vzácných zemin (REE) v jednotlivých průmyslových sektorech.
-          ●●● = vysoká závislost, ●● = střední, ● = nízká, — = nepoužívá.
+          {t.sectorDesc}
         </p>
-        <DemandHeatmap demand={demand} />
-        <SourceAttribution source="firemní specifikace, IEA 2025" />
+        <DemandHeatmap demand={demand} dict={dict} />
+        <SourceAttribution source={t.sectorSource} dict={dict} />
       </div>
 
       {/* Material Intensity */}
       <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
         <h3 className="mb-2 text-lg font-bold text-[#0F172A]">
-          Materiálová náročnost klíčových technologií
+          {t.materialTitle}
         </h3>
         <p className="mb-4 text-xs text-[#64748B]">
-          Kolik kilogramů neodymových magnetů (NdFeB) potřebuje každá technologie.
-          Klikněte na kartu pro detail obsahu jednotlivých prvků.
+          {t.materialDesc}
         </p>
-        <MaterialIntensityCards data={materialIntensity} />
-        <SourceAttribution source="výrobci motorů a turbín, IEA 2025" />
+        <MaterialIntensityCards data={materialIntensity} dict={dict} />
+        <SourceAttribution source={t.materialSource} dict={dict} />
       </div>
 
       {/* Projections Table */}
       <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
         <h3 className="mb-2 text-lg font-bold text-[#0F172A]">
-          Projekce poptávky po vzácných zeminách
+          {t.projectionsTitle}
         </h3>
         <p className="mb-4 text-xs text-[#64748B]">
-          Srovnání projekcí z různých zdrojů a scénářů. CAGR = průměrný roční růst.
-          Všechny hlavní scénáře ukazují na výrazné zvýšení poptávky do roku 2030.
+          {t.projectionsDesc}
         </p>
-        <ProjectionsTable data={projections} />
-        <SourceAttribution source="IEA, USGS 2025, vlastní odhady" />
+        <ProjectionsTable data={projections} dict={dict} />
+        <SourceAttribution source={t.projectionsSource} dict={dict} />
       </div>
     </div>
   )

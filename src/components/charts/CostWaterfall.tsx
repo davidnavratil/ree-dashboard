@@ -13,10 +13,12 @@ import {
 } from 'recharts'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 import type { CostBreakdown } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 import { parseNumericString } from '@/lib/format'
 
 interface Props {
   data: CostBreakdown[]
+  dict: Dictionary
 }
 
 const BAR_COLORS = [
@@ -30,7 +32,7 @@ const BAR_COLORS = [
   '#9D174D', // magnet - high
 ]
 
-function CustomTooltip({ active, payload }: any) {
+function CustomTooltip({ active, payload, multiplierLabel }: any) {
   if (!active || !payload?.[0]) return null
   const d = payload[0].payload
   return (
@@ -38,32 +40,38 @@ function CustomTooltip({ active, payload }: any) {
       <p className="text-sm font-bold text-[#0F172A]">{d.name}</p>
       <p className="text-xs text-[#475569]">{d.product}</p>
       <p className="mt-1 font-mono text-sm text-[#0E7490]">{d.price} USD/kg</p>
-      <p className="text-xs text-[#D97706]">Multiplikátor: {d.multiplier}</p>
+      <p className="text-xs text-[#D97706]">{multiplierLabel} {d.multiplier}</p>
       <p className="mt-1 text-xs text-[#64748B]">{d.dominant}</p>
     </div>
   )
 }
 
-export default function CostWaterfall({ data }: Props) {
+export default function CostWaterfall({ data, dict }: Props) {
+  const stageNames = (dict.charts.costWaterfall as any).stageNames as Record<string, string> | undefined
+  const products = (dict.charts.costWaterfall as any).products as Record<string, string> | undefined
+  const dominantPlayers = (dict.charts.costWaterfall as any).dominantPlayers as Record<string, string> | undefined
+
   const chartData = data.map((row) => {
     const price = parseNumericString(row['Typická cena (USD/kg)'] as string) ?? 0
+    const rawName = (row['Stupeň řetězce'] as string)?.replace(/^\d+\.\s*/, '')
+    const rawProduct = row['Produkt'] as string
+    const rawDominant = row['Dominantní hráč'] as string
     return {
-      name: (row['Stupeň řetězce'] as string)?.replace(/^\d+\.\s*/, ''),
-      product: row['Produkt'] as string,
+      name: stageNames?.[rawName] ?? rawName,
+      product: products?.[rawProduct] ?? rawProduct,
       price,
       multiplier: row['Multiplikátor vs. ruda'] as string,
-      dominant: row['Dominantní hráč'] as string,
+      dominant: dominantPlayers?.[rawDominant] ?? rawDominant,
     }
   })
 
   return (
     <div>
       <h3 className="mb-2 text-lg font-bold text-[#0F172A]">
-        Násobení hodnoty v dodavatelském řetězci
+        {dict.charts.costWaterfall.title}
       </h3>
       <p className="mb-4 text-sm text-[#475569]">
-        Cena vzácných zemin se při zpracování z rudy na hotový magnet znásobí stovkrát.
-        Kdo ovládá rafinaci, ovládá celý řetězec.
+        {dict.charts.costWaterfall.description}
       </p>
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={chartData} margin={{ left: 10, right: 30, top: 20, bottom: 5 }}>
@@ -78,12 +86,12 @@ export default function CostWaterfall({ data }: Props) {
           />
           <YAxis
             tick={{ fill: '#475569', fontSize: 12 }}
-            label={{ value: 'USD/kg', angle: -90, position: 'insideLeft', fill: '#64748B', fontSize: 11 }}
+            label={{ value: dict.charts.costWaterfall.yAxisLabel, angle: -90, position: 'insideLeft', fill: '#64748B', fontSize: 11 }}
             scale="log"
             domain={[0.3, 500]}
             allowDataOverflow
           />
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltip multiplierLabel={dict.charts.costWaterfall.tooltipMultiplier} />} />
           <Bar dataKey="price" radius={[4, 4, 0, 0]}>
             {chartData.map((_, i) => (
               <Cell key={i} fill={BAR_COLORS[i % BAR_COLORS.length]} />
@@ -98,7 +106,7 @@ export default function CostWaterfall({ data }: Props) {
           </Bar>
         </BarChart>
       </ResponsiveContainer>
-      <SourceAttribution source="firemní výkazy, vlastní odhady 2025" />
+      <SourceAttribution source={dict.charts.costWaterfall.source} dict={dict} />
     </div>
   )
 }

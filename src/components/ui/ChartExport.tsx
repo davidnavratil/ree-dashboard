@@ -5,9 +5,10 @@ import { useRef, useCallback, useState } from 'react'
 interface Props {
   children: React.ReactNode
   filename?: string
+  downloadTitle?: string
 }
 
-export default function ChartExport({ children, filename = 'graf' }: Props) {
+export default function ChartExport({ children, filename = 'graf', downloadTitle = 'Download as PNG' }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const [hovered, setHovered] = useState(false)
 
@@ -68,7 +69,7 @@ export default function ChartExport({ children, filename = 'graf' }: Props) {
         onClick={handleExport}
         className="absolute z-10 rounded p-1 text-[#CBD5E1] transition-all hover:text-[#475569]"
         style={{ opacity: hovered ? 1 : 0, top: 0, right: 0 }}
-        title="Stáhnout jako PNG"
+        title={downloadTitle}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
           <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z" />

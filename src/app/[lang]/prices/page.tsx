@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation'
+import { getDictionary, hasLocale } from '@/i18n'
 import { loadData } from '@/lib/data'
 import type { PricePoint, EventItem, CorrelationData, PricesMeta, SummaryStats } from '@/lib/types'
 import PageHeader from '@/components/layout/PageHeader'
@@ -5,7 +7,11 @@ import PriceTimeSeries from '@/components/charts/PriceTimeSeries'
 import CorrelationMatrix from '@/components/charts/CorrelationMatrix'
 import ChartExport from '@/components/ui/ChartExport'
 
-export default async function PricesPage() {
+export default async function PricesPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  if (!hasLocale(lang)) notFound()
+  const dict = await getDictionary(lang)
+
   const [prices, events, correlation, meta, stats] = await Promise.all([
     loadData<PricePoint[]>('prices_history.json'),
     loadData<EventItem[]>('events.json'),
@@ -19,14 +25,14 @@ export default async function PricesPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        title="Cenová analýza vzácných zemin"
-        subtitle="Historické měsíční data cen oxidů vzácných zemin v USD/kg. Vyberte prvky a období pro porovnání."
+        title={dict.prices.title}
+        subtitle={dict.prices.subtitle}
       />
 
       {/* Main Price Chart */}
       <div className="group rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-        <ChartExport filename="cenova-analyza">
-          <PriceTimeSeries data={prices} events={events} meta={meta} />
+        <ChartExport filename="cenova-analyza" downloadTitle={dict.common.downloadPng}>
+          <PriceTimeSeries data={prices} events={events} meta={meta} dict={dict} />
         </ChartExport>
       </div>
 
@@ -35,27 +41,25 @@ export default async function PricesPage() {
         {/* Key Insight */}
         <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
           <h3 className="mb-4 text-lg font-bold text-[#0F172A]">
-            Klíčová zjištění z cenových dat
+            {dict.prices.insightsTitle}
           </h3>
           <div className="space-y-4">
             <div className="rounded-lg border border-[#E2E8F0] bg-white p-4">
               <p className="text-sm text-[#334155]">
-                <span className="font-bold text-[#D97706]">Korelace s ropou Brent = 0,09</span>
-                {' '}— vzácné zeminy jsou geopolitická, nikoli cyklická komodita. Jejich ceny nereagují na hospodářský cyklus,
-                ale na exportní kontroly Číny a průmyslovou politiku.
+                <span className="font-bold text-[#D97706]">{dict.prices.insight1bold}</span>
+                {dict.prices.insight1text}
               </p>
             </div>
             <div className="rounded-lg border border-[#E2E8F0] bg-white p-4">
               <p className="text-sm text-[#334155]">
-                <span className="font-bold text-[#9D174D]">Dysprosium</span> je nejvolatilnější prvek.
-                V roce 2011 dosáhlo ceny přes 3 000 USD/kg. Dnes se obchoduje kolem 300 USD/kg, ale nové
-                exportní kontroly Číny z roku 2025 mohou vyvolat další cenový šok.
+                <span className="font-bold text-[#9D174D]">{dict.prices.insight2bold}</span>
+                {dict.prices.insight2text}
               </p>
             </div>
             <div className="rounded-lg border border-[#E2E8F0] bg-white p-4">
               <p className="text-sm text-[#334155]">
-                <span className="font-bold text-[#0E7490]">Terbium a dysprosium</span> jsou silně korelované
-                (0,69) — obojí se používá v permanentních magnetech. Praseodym sleduje podobný trend (korelace s Dy = 0,53).
+                <span className="font-bold text-[#0E7490]">{dict.prices.insight3bold}</span>
+                {dict.prices.insight3text}
               </p>
             </div>
           </div>
@@ -64,17 +68,17 @@ export default async function PricesPage() {
           {lastPeriod && (
             <div className="mt-6">
               <h4 className="mb-2 text-sm font-bold text-[#475569]">
-                Statistiky za období {lastPeriod.period}
+                {dict.prices.statsTitle} {lastPeriod.period}
               </h4>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="border-b border-[#E2E8F0]">
-                      <th className="px-2 py-1 text-left text-[#64748B]">Prvek</th>
-                      <th className="px-2 py-1 text-right text-[#64748B]">Průměr</th>
-                      <th className="px-2 py-1 text-right text-[#64748B]">Min</th>
-                      <th className="px-2 py-1 text-right text-[#64748B]">Max</th>
-                      <th className="px-2 py-1 text-right text-[#64748B]">Volatilita</th>
+                      <th className="px-2 py-1 text-left text-[#64748B]">{dict.prices.statsHeaders.element}</th>
+                      <th className="px-2 py-1 text-right text-[#64748B]">{dict.prices.statsHeaders.average}</th>
+                      <th className="px-2 py-1 text-right text-[#64748B]">{dict.prices.statsHeaders.min}</th>
+                      <th className="px-2 py-1 text-right text-[#64748B]">{dict.prices.statsHeaders.max}</th>
+                      <th className="px-2 py-1 text-right text-[#64748B]">{dict.prices.statsHeaders.volatility}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -96,8 +100,8 @@ export default async function PricesPage() {
 
         {/* Correlation Matrix */}
         <div className="group rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-          <ChartExport filename="korelacni-matice">
-            <CorrelationMatrix data={correlation} />
+          <ChartExport filename="korelacni-matice" downloadTitle={dict.common.downloadPng}>
+            <CorrelationMatrix data={correlation} dict={dict} />
           </ChartExport>
         </div>
       </div>

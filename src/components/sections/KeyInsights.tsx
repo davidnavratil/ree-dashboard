@@ -1,57 +1,97 @@
 import Link from 'next/link'
+import type { Dictionary } from '@/i18n'
 
-const insights = [
-  {
-    icon: '🔴',
-    text: (
-      <>
-        Čína kontroluje 69 % těžby, ale 91–98 % zpracování vzácných zemin — skutečná závislost leží
-        v <Link href="/supply-chain" className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">rafinaci</Link>, ne v dolech.
-      </>
-    ),
-  },
-  {
-    icon: '⚡',
-    text: (
-      <>
-        <Link href="/demand" className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">Poptávka</Link> po
-        magnetických vzácných zeminách (<Link href="/elements" className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">neodym, dysprosium</Link>)
-        poroste o 7–13 % ročně díky elektromobilitě a větrné energii.
-      </>
-    ),
-  },
-  {
-    icon: '📉',
-    text: (
-      <>
-        Od roku 2026 se očekává strukturální deficit — nabídka mimo Čínu nestíhá růst poptávky.
-      </>
-    ),
-  },
-  {
-    icon: '💰',
-    text: (
-      <>
-        Vzácné zeminy nejsou cenový problém. I trojnásobné zdražení přidá méně než 1 % k <Link href="/prices" className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">ceně</Link> elektromobilu.
-      </>
-    ),
-  },
-  {
-    icon: '🛡️',
-    text: (
-      <>
-        Hlavní riziko je dostupnost, ne cena. <Link href="/geopolitics" className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">Exportní kontroly Číny</Link> z roku 2025
-        mohou zastavit dodávky do Evropy.
-      </>
-    ),
-  },
-]
+interface KeyInsightsProps {
+  dict: Dictionary
+  lang: string
+}
 
-export default function KeyInsights() {
+const icons = ['🔴', '⚡', '📉', '💰', '🛡️']
+
+const linkClass = 'font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]'
+
+function buildInsights(dict: Dictionary, lang: string) {
+  const items = dict.insights.items
+  return [
+    {
+      icon: icons[0],
+      text: (
+        <>
+          {items[0].split(/rafinaci|refining/i).length === 2 ? (
+            <>
+              {items[0].split(/rafinaci|refining/i)[0]}
+              <Link href={`/${lang}/supply-chain`} className={linkClass}>
+                {items[0].match(/rafinaci|refining/i)?.[0] ?? (lang === 'cs' ? 'rafinaci' : 'refining')}
+              </Link>
+              {items[0].split(/rafinaci|refining/i)[1]}
+            </>
+          ) : (
+            items[0]
+          )}
+        </>
+      ),
+    },
+    {
+      icon: icons[1],
+      text: (
+        <>
+          <Link href={`/${lang}/demand`} className={linkClass}>
+            {lang === 'cs' ? 'Poptávka' : 'Demand'}
+          </Link>
+          {' '}{items[1].split(/^Poptávka |^Demand /i)[1] ?? items[1].replace(/^Poptávka |^Demand /i, '')}
+        </>
+      ),
+    },
+    {
+      icon: icons[2],
+      text: <>{items[2]}</>,
+    },
+    {
+      icon: icons[3],
+      text: (
+        <>
+          {items[3].split(/ceně|price/i).length === 2 ? (
+            <>
+              {items[3].split(/ceně|price/i)[0]}
+              <Link href={`/${lang}/prices`} className={linkClass}>
+                {items[3].match(/ceně|price/i)?.[0] ?? (lang === 'cs' ? 'ceně' : 'price')}
+              </Link>
+              {items[3].split(/ceně|price/i)[1]}
+            </>
+          ) : (
+            items[3]
+          )}
+        </>
+      ),
+    },
+    {
+      icon: icons[4],
+      text: (
+        <>
+          {items[4].split(/Exportní kontroly Číny|China's export controls/i).length === 2 ? (
+            <>
+              {items[4].split(/Exportní kontroly Číny|China's export controls/i)[0]}
+              <Link href={`/${lang}/geopolitics`} className={linkClass}>
+                {items[4].match(/Exportní kontroly Číny|China's export controls/i)?.[0] ?? (lang === 'cs' ? 'Exportní kontroly Číny' : "China's export controls")}
+              </Link>
+              {items[4].split(/Exportní kontroly Číny|China's export controls/i)[1]}
+            </>
+          ) : (
+            items[4]
+          )}
+        </>
+      ),
+    },
+  ]
+}
+
+export default function KeyInsights({ dict, lang }: KeyInsightsProps) {
+  const insights = buildInsights(dict, lang)
+
   return (
     <div>
       <h3 className="mb-4 text-lg font-bold text-[#0F172A]">
-        Klíčová zjištění
+        {dict.insights.title}
       </h3>
       <div className="space-y-4">
         {insights.map((insight, i) => (

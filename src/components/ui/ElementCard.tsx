@@ -1,25 +1,20 @@
 'use client'
 
 import type { Element } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 import { GROUP_COLORS } from '@/lib/colors'
 
 interface Props {
   element: Element
   isSelected: boolean
   onClick: () => void
+  dict: Dictionary
 }
 
-const GROUP_LABELS: Record<string, string> = {
-  'LREE': 'lehké',
-  'HREE': 'těžké',
-  'LREE/MREE': 'lehké/střední',
-  'MREE/HREE': 'střední/těžké',
-  'REE (spec.)': 'speciální',
-  '—': '—',
-}
-
-export default function ElementCard({ element, isSelected, onClick }: Props) {
+export default function ElementCard({ element, isSelected, onClick, dict }: Props) {
   const groupColor = GROUP_COLORS[element.Skupina] || '#64748B'
+  const groupLabel = (dict.elements.cardGroupLabels as Record<string, string>)[element.Skupina] ?? element.Skupina
+  const elementName = (dict.elements.elementNameMap as Record<string, string>)[element.Prvek] ?? element.Prvek
 
   return (
     <button
@@ -36,12 +31,12 @@ export default function ElementCard({ element, isSelected, onClick }: Props) {
       >
         {element.Symbol}
       </span>
-      <span className="mt-1 text-xs text-[#0F172A]">{element.Prvek}</span>
+      <span className="mt-1 text-xs text-[#0F172A]">{elementName}</span>
       <span
         className="mt-2 inline-block rounded-full px-2 py-0.5 text-[10px] font-medium"
         style={{ backgroundColor: `${groupColor}15`, color: groupColor }}
       >
-        {GROUP_LABELS[element.Skupina] ?? element.Skupina}
+        {groupLabel}
       </span>
     </button>
   )

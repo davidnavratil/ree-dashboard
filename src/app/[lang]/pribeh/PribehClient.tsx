@@ -7,15 +7,18 @@ import ConcentrationCascade from '@/components/charts/ConcentrationCascade'
 import GapChart from '@/components/charts/GapChart'
 import ChinaBalanceChart from '@/components/charts/ChinaBalance'
 import type { SupplyChainStage, GapDataPoint, ChinaBalance, CostPassthrough } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 
 interface Props {
   supplyChain: SupplyChainStage[]
   gapData: GapDataPoint[]
   chinaBalance: ChinaBalance[]
   costPass: CostPassthrough[]
+  dict: Dictionary
+  lang: string
 }
 
-/* ── building blocks ── */
+/* -- building blocks -- */
 
 function Reveal({
   children,
@@ -82,14 +85,17 @@ function Divider() {
   )
 }
 
-/* spacing helper — consistent giant gap between content blocks within a chapter */
-const BLOCK_GAP = 'mb-32 sm:mb-48' // 128px / 192px
+/* spacing helper */
+const BLOCK_GAP = 'mb-32 sm:mb-48'
 
-export default function PribehClient({ supplyChain, gapData, chinaBalance, costPass }: Props) {
+export default function PribehClient({ supplyChain, gapData, chinaBalance, costPass, dict, lang }: Props) {
+  const t = dict.story
+  const CTA_HREFS = ['/', '/elements', '/prices', '/supply-chain', '/geopolitics', '/scenarios']
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
 
-      {/* ═══════════════ HERO ═══════════════ */}
+      {/* HERO */}
       <section className="pt-16 pb-8 text-center sm:pt-32 sm:pb-16">
         <motion.span
           initial={{ opacity: 0, y: -10 }}
@@ -97,7 +103,7 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
           transition={{ duration: 0.6, delay: 0.2 }}
           className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-[#D97706]"
         >
-          Příběh v datech
+          {t.heroLabel}
         </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -105,9 +111,9 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
           transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           className="mt-6 font-serif text-4xl font-bold leading-[1.15] text-[#0F172A] sm:text-5xl lg:text-6xl"
         >
-          Vzácné zeminy
+          {t.heroTitle}
           <br />
-          <span className="text-[#64748B]">Proč na nich závisí budoucnost</span>
+          <span className="text-[#64748B]">{t.heroSubtitle}</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -115,8 +121,7 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mx-auto mt-8 max-w-xl font-serif text-lg leading-relaxed text-[#94A3B8] sm:text-xl"
         >
-          Sedm kapitol o 17 prvcích, které pohání elektromobily, větrné turbíny
-          i řízené střely — a o zemi, která je téměř výhradně kontroluje.
+          {t.heroDesc}
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
@@ -131,9 +136,9 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
             rel="noopener noreferrer"
             className="text-[#D97706] hover:underline"
           >
-            Peníze, procenta a prosperita
+            {dict.home.newsletter}
           </a>
-          {' '} · hlavní ekonom České spořitelny
+          {' '} · {t.authorLine}
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
@@ -155,32 +160,25 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
 
       <Divider />
 
-      {/* ═══════════════ CO JSOU VZÁCNÉ ZEMINY ═══════════════ */}
+      {/* CH1: CO JSOU VZACNE ZEMINY */}
       <Reveal className={BLOCK_GAP}>
         <h2 className="font-serif text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl">
-          Co jsou vzácné zeminy?
+          {t.ch1Title}
         </h2>
       </Reveal>
 
       <Reveal className={BLOCK_GAP}>
         <p className="text-lg leading-relaxed text-[#334155]">
-          Skupina 17 kovových prvků — lanthanoidů plus skandia a yttria.
-          Paradoxně nejsou geologicky vzácné. Cerium je v zemské kůře běžnější než měď.
+          {t.ch1P1}
         </p>
         <p className="mt-6 text-lg leading-relaxed text-[#334155]">
-          „Vzácná" je schopnost je ekonomicky těžit, chemicky separovat a zpracovat
-          na průmyslově využitelné materiály.
+          {t.ch1P2}
         </p>
       </Reveal>
 
       <Reveal className={BLOCK_GAP} delay={0.15}>
         <div className="grid gap-5 sm:grid-cols-2">
-          {[
-            { element: 'Neodym', use: 'Motor elektromobilu' },
-            { element: 'Dysprosium', use: 'Tepelná odolnost magnetů' },
-            { element: 'Terbium', use: 'Naváděcí systémy' },
-            { element: 'Samarium', use: 'Družice na oběžné dráze' },
-          ].map((item) => (
+          {t.ch1Elements.map((item) => (
             <div key={item.element} className="rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-5">
               <p className="font-serif text-lg font-bold text-[#0F172A]">{item.element}</p>
               <p className="mt-1 text-sm text-[#64748B]">{item.use}</p>
@@ -192,110 +190,110 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
       <Reveal>
         <div className="rounded-xl border border-[#D97706]/20 bg-[#D97706]/5 p-6">
           <p className="font-serif text-base italic leading-relaxed text-[#92400E]">
-            Geologicky běžné, strategicky kritické.
-            <br />
-            Problém není najít rudu — problém je zpracovat ji na magnet.
+            {t.ch1Quote.split('\n').map((line, i) => (
+              <span key={i}>{line}{i === 0 && <br />}</span>
+            ))}
           </p>
         </div>
       </Reveal>
 
       <Divider />
 
-      {/* ═══════════════ DOMINANCE ČÍNY ═══════════════ */}
+      {/* CH2: DOMINANCE CINY */}
       <Reveal className={BLOCK_GAP}>
         <h2 className="font-serif text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl">
-          Jedna země,<br />totální kontrola
+          {t.ch2Title.split('\n').map((line, i) => (
+            <span key={i}>{line}{i === 0 && <br />}</span>
+          ))}
         </h2>
       </Reveal>
 
       <Reveal className={BLOCK_GAP}>
         <p className="text-lg leading-relaxed text-[#334155]">
-          Čína nevládne jen těžbě — její dominance roste s každým krokem zpracování.
-          Od rudy k hotovému magnetu se její podíl zvyšuje ze 69 % na více než 90 %.
+          {t.ch2P1}
         </p>
       </Reveal>
 
       <Reveal className={BLOCK_GAP}>
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
-          <BigStat value={69} label="Těžba" delay={0} />
-          <BigStat value={91} label="Rafinace" delay={0.15} />
-          <BigStat value={92} label="Magnety" delay={0.3} />
-          <BigStat value={99} label="Terbium" delay={0.45} />
+          <BigStat value={69} label={t.ch2Stats[0].label} delay={0} />
+          <BigStat value={91} label={t.ch2Stats[1].label} delay={0.15} />
+          <BigStat value={92} label={t.ch2Stats[2].label} delay={0.3} />
+          <BigStat value={99} label={t.ch2Stats[3].label} delay={0.45} />
         </div>
       </Reveal>
 
       <Reveal>
         <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-          <ConcentrationCascade data={supplyChain} />
+          <ConcentrationCascade data={supplyChain} dict={dict} />
         </div>
         <p className="mt-6 text-sm leading-relaxed text-[#64748B]">
-          Skutečná závislost není v dolech, ale v rafinériích a továrnách na magnety.
+          {t.ch2Note}
         </p>
       </Reveal>
 
       <Divider />
 
-      {/* ═══════════════ NABÍDKA VS. POPTÁVKA ═══════════════ */}
+      {/* CH3: NUZKY SE OTEVIRAJI */}
       <Reveal className={BLOCK_GAP}>
         <h2 className="font-serif text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl">
-          Nůžky se otevírají
+          {t.ch3Title}
         </h2>
       </Reveal>
 
       <Reveal className={BLOCK_GAP}>
         <p className="text-lg leading-relaxed text-[#334155]">
-          Elektromobilita a větrná energetika ženou poptávku po magnetických vzácných
-          zeminách nahoru tempem 7–13 % ročně. Nabídka mimo Čínu ale nestíhá.
+          {t.ch3P1}
         </p>
       </Reveal>
 
       <Reveal>
         <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-          <GapChart data={gapData} />
+          <GapChart data={gapData} dict={dict} />
         </div>
         <p className="mt-6 text-sm leading-relaxed text-[#64748B]">
-          Od roku 2026 se očekává strukturální deficit.
-          Nové mimočínské projekty budou trvat 5–10 let, než dosáhnou plné kapacity.
+          {t.ch3Note}
         </p>
       </Reveal>
 
       <Divider />
 
-      {/* ═══════════════ ČÍNSKÁ BILANCE ═══════════════ */}
+      {/* CH4: CINSKA BILANCE */}
       <Reveal className={BLOCK_GAP}>
         <h2 className="font-serif text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl">
-          Čína potřebuje<br />stále víc sama
+          {t.ch4Title.split('\n').map((line, i) => (
+            <span key={i}>{line}{i === 0 && <br />}</span>
+          ))}
         </h2>
       </Reveal>
 
       <Reveal className={BLOCK_GAP}>
         <p className="text-lg leading-relaxed text-[#334155]">
-          Čína není jen největší producent — je i největší spotřebitel. Její domácí
-          poptávka roste tak rychle, že objem volný pro export klesá.
-          Méně vzácných zemin pro zbytek světa, i bez jakýchkoli exportních omezení.
+          {t.ch4P1}
         </p>
       </Reveal>
 
       <Reveal>
         <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-          <ChinaBalanceChart data={chinaBalance} />
+          <ChinaBalanceChart data={chinaBalance} dict={dict} />
         </div>
       </Reveal>
 
       <Divider />
 
-      {/* ═══════════════ CENA NENÍ PROBLÉM ═══════════════ */}
+      {/* CH5: NE CENA. DOSTUPNOST. */}
       <Reveal className={BLOCK_GAP}>
         <h2 className="font-serif text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl">
-          Ne cena.<br />Dostupnost.
+          {t.ch5Title.split('\n').map((line, i) => (
+            <span key={i}>{line}{i === 0 && <br />}</span>
+          ))}
         </h2>
       </Reveal>
 
       <Reveal className={BLOCK_GAP}>
         <blockquote className="border-l-4 border-[#D97706] pl-5">
           <p className="font-serif text-2xl font-bold italic leading-snug text-[#0F172A] sm:text-3xl">
-            I trojnásobné zdražení přidá méně než 1 %
-            k ceně elektromobilu.
+            {t.ch5Quote}
           </p>
         </blockquote>
       </Reveal>
@@ -305,17 +303,17 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-[#E2E8F0]">
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Produkt</th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Podíl vzácných zemin</th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Dopad 3x zdražení</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{t.ch5TableHeaders.product}</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{t.ch5TableHeaders.reeShare}</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{t.ch5TableHeaders.tripleImpact}</th>
               </tr>
             </thead>
             <tbody>
               {costPass.slice(0, 5).map((row, i) => (
                 <tr key={i} className="border-b border-[#E2E8F0]/50">
-                  <td className="px-3 py-2 font-medium text-[#0F172A]">{row.Produkt}</td>
+                  <td className="px-3 py-2 font-medium text-[#0F172A]">{(dict.home.costPassProducts as Record<string, string>)?.[row.Produkt] ?? row.Produkt}</td>
                   <td className="px-3 py-2 font-mono text-xs text-[#0E7490]">{row['REE/produkt (%)']}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-[#D97706]">{row['Dopad 3× zdražení']}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-[#D97706]">{(dict.home.costPassImpact as Record<string, string>)?.[row['Dopad 3× zdražení']] ?? row['Dopad 3× zdražení']}</td>
                 </tr>
               ))}
             </tbody>
@@ -325,68 +323,57 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
 
       <Reveal>
         <p className="text-lg leading-relaxed text-[#334155]">
-          Skutečné riziko je, že dodávky prostě přestanou proudit — kvůli exportním
-          kontrolám, geopolitickému napětí nebo přírodní katastrofě v jediné provincii.
+          {t.ch5P1}
         </p>
       </Reveal>
 
       <Divider />
 
-      {/* ═══════════════ CESTA VEN ═══════════════ */}
+      {/* CH6: CESTA VEN */}
       <Reveal className={BLOCK_GAP}>
         <h2 className="font-serif text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl">
-          Cesta ven existuje
+          {t.ch6Title}
         </h2>
       </Reveal>
 
       <Reveal className={BLOCK_GAP}>
         <p className="text-lg leading-relaxed text-[#334155]">
-          Neexistuje rychlé řešení. Vybudování alternativního dodavatelského řetězce
-          zabere minimálně desetiletí. Ale kroky se dějí:
+          {t.ch6P1}
         </p>
       </Reveal>
 
       <div className="space-y-6">
-        {[
-          { icon: '🏭', title: 'Nové doly a rafinérie', text: 'Austrálie, Kanada, Švédsko i USA budují kapacity. Většina projektů ale nedosáhne plného provozu před rokem 2030.' },
-          { icon: '♻️', title: 'Recyklace', text: 'Z magnetů v elektronice a autovracích lze získat neodym i dysprosium. Zatím pokrývá pod 1 % poptávky, ale roste.' },
-          { icon: '🔬', title: 'Substituce', text: 'Feritové magnety nebo motory bez magnetů mohou snížit závislost, ale za cenu nižšího výkonu a vyšší hmotnosti.' },
-          { icon: '🇪🇺', title: 'Nařízení EU o kritických surovinách', text: 'Evropa stanovila cíle: 10 % těžby, 40 % zpracování a 25 % recyklace z domácí spotřeby do roku 2030.' },
-        ].map((item, i) => (
-          <Reveal key={i} delay={i * 0.1}>
-            <div className="flex gap-4 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
-              <span className="shrink-0 text-2xl">{item.icon}</span>
-              <div>
-                <p className="font-semibold text-[#0F172A]">{item.title}</p>
-                <p className="mt-1 text-sm leading-relaxed text-[#475569]">{item.text}</p>
+        {t.ch6Items.map((item, i) => {
+          const icons = ['\u{1F3ED}', '\u267B\u{FE0F}', '\u{1F52C}', '\u{1F1EA}\u{1F1FA}']
+          return (
+            <Reveal key={i} delay={i * 0.1}>
+              <div className="flex gap-4 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-5">
+                <span className="shrink-0 text-2xl">{icons[i] ?? ''}</span>
+                <div>
+                  <p className="font-semibold text-[#0F172A]">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#475569]">{item.text}</p>
+                </div>
               </div>
-            </div>
-          </Reveal>
-        ))}
+            </Reveal>
+          )
+        })}
       </div>
 
       <Divider />
 
-      {/* ═══════════════ CTA ═══════════════ */}
+      {/* CTA */}
       <Reveal className="pb-32 text-center sm:pb-48">
         <h2 className="mb-8 font-serif text-4xl font-bold text-[#0F172A] sm:text-5xl">
-          Chcete vědět víc?
+          {t.ctaTitle}
         </h2>
         <p className="mb-12 text-lg text-[#64748B]">
-          Prozkoumejte detailní data a analýzy v interaktivním dashboardu.
+          {t.ctaDesc}
         </p>
         <div className="flex flex-wrap justify-center gap-3">
-          {[
-            { href: '/', label: 'Přehled' },
-            { href: '/elements', label: 'Prvky' },
-            { href: '/prices', label: 'Ceny' },
-            { href: '/supply-chain', label: 'Hodnotový řetězec' },
-            { href: '/geopolitics', label: 'Geopolitika' },
-            { href: '/scenarios', label: 'Scénáře' },
-          ].map((link) => (
+          {t.ctaLinks.map((link, i) => (
             <Link
-              key={link.href}
-              href={link.href}
+              key={CTA_HREFS[i]}
+              href={`/${lang}${CTA_HREFS[i]}`}
               className="rounded-full border border-[#E2E8F0] px-5 py-2.5 text-sm font-medium text-[#0E7490] transition-all hover:border-[#0E7490] hover:bg-[#0E7490]/5 hover:shadow-sm"
             >
               {link.label}
@@ -394,7 +381,7 @@ export default function PribehClient({ supplyChain, gapData, chinaBalance, costP
           ))}
         </div>
         <p className="mt-16 text-xs text-[#94A3B8]">
-          David Navrátil · Česká spořitelna · Strategic Research & Insight · 2025
+          {t.ctaFooter}
         </p>
       </Reveal>
     </div>

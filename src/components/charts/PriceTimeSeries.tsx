@@ -15,24 +15,29 @@ import {
 } from 'recharts'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 import type { PricePoint, EventItem, PricesMeta } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 import { CHART_PALETTE } from '@/lib/colors'
 
 interface Props {
   data: PricePoint[]
   events: EventItem[]
   meta: PricesMeta
+  dict: Dictionary
 }
 
-const ELEMENT_KEYS = [
-  { key: 'Dy oxid USD/kg', label: 'Dysprosium (Dy)', default: false },
-  { key: 'Pr oxid USD/kg', label: 'Praseodym (Pr)', default: true },
-  { key: 'Tb oxid USD/kg', label: 'Terbium (Tb)', default: false },
-  { key: 'Ce oxid USD/kg', label: 'Cer (Ce)', default: false },
-  { key: 'La oxid USD/kg', label: 'Lanthan (La)', default: false },
-  { key: 'Sm oxid USD/kg', label: 'Samarium (Sm)', default: false },
-  { key: 'Gd oxid USD/kg', label: 'Gadolinium (Gd)', default: false },
-  { key: 'Eu oxid USD/kg', label: 'Europium (Eu)', default: false },
-]
+function getElementKeys(dict: Dictionary) {
+  const n = dict.prices.elementNames
+  return [
+    { key: 'Dy oxid USD/kg', label: n.Dy, default: false },
+    { key: 'Pr oxid USD/kg', label: n.Pr, default: true },
+    { key: 'Tb oxid USD/kg', label: n.Tb, default: false },
+    { key: 'Ce oxid USD/kg', label: n.Ce, default: false },
+    { key: 'La oxid USD/kg', label: n.La, default: false },
+    { key: 'Sm oxid USD/kg', label: n.Sm, default: false },
+    { key: 'Gd oxid USD/kg', label: n.Gd, default: false },
+    { key: 'Eu oxid USD/kg', label: n.Eu, default: false },
+  ]
+}
 
 function CustomTooltip({ active, payload, label }: any) {
   if (!active || !payload) return null
@@ -48,7 +53,9 @@ function CustomTooltip({ active, payload, label }: any) {
   )
 }
 
-export default function PriceTimeSeries({ data, events, meta }: Props) {
+export default function PriceTimeSeries({ data, events, meta, dict }: Props) {
+  const ELEMENT_KEYS = getElementKeys(dict)
+
   const [selected, setSelected] = useState<Set<string>>(
     new Set(ELEMENT_KEYS.filter((e) => e.default).map((e) => e.key))
   )
@@ -98,7 +105,7 @@ export default function PriceTimeSeries({ data, events, meta }: Props) {
             showEvents ? 'bg-[#D97706] text-white' : 'bg-[#F1F5F9] text-[#64748B]'
           }`}
         >
-          {showEvents ? 'Skrýt události' : 'Zobrazit události'}
+          {showEvents ? dict.prices.hideEvents : dict.prices.showEvents}
         </button>
       </div>
 
@@ -111,7 +118,7 @@ export default function PriceTimeSeries({ data, events, meta }: Props) {
             tick={{ fill: '#475569', fontSize: 11 }}
             interval="preserveStartEnd"
           />
-          <YAxis tick={{ fill: '#475569', fontSize: 12 }} label={{ value: 'USD/kg', angle: -90, position: 'insideLeft', fill: '#64748B', fontSize: 11 }} />
+          <YAxis tick={{ fill: '#475569', fontSize: 12 }} label={{ value: dict.charts.priceTimeSeries.yAxisLabel, angle: -90, position: 'insideLeft', fill: '#64748B', fontSize: 11 }} />
           <Tooltip content={<CustomTooltip />} />
           <Legend wrapperStyle={{ fontSize: 11, color: '#475569' }} />
 
@@ -154,7 +161,7 @@ export default function PriceTimeSeries({ data, events, meta }: Props) {
           />
         </LineChart>
       </ResponsiveContainer>
-      <SourceAttribution source="měsíční data cen oxidů vzácných zemin 2014–2025" />
+      <SourceAttribution source={dict.charts.priceTimeSeries.source} dict={dict} />
     </div>
   )
 }

@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react'
 import type { CorrelationData } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 
 interface Props {
   data: CorrelationData
+  dict: Dictionary
 }
 
 function getColor(value: number): string {
@@ -24,7 +26,7 @@ function getTextColor(value: number): string {
   return '#0F172A'
 }
 
-export default function CorrelationMatrix({ data }: Props) {
+export default function CorrelationMatrix({ data, dict }: Props) {
   const [hoveredCell, setHoveredCell] = useState<{ row: number; col: number } | null>(null)
 
   const shortLabels = data.labels.map((l) =>
@@ -34,10 +36,10 @@ export default function CorrelationMatrix({ data }: Props) {
   return (
     <div>
       <h3 className="mb-4 text-lg font-bold text-[#0F172A]">
-        Korelační matice měsíčních výnosů
+        {dict.charts.correlation.title}
       </h3>
       <p className="mb-3 text-xs text-[#64748B]">
-        Ukazuje, jak silně se pohybují ceny jednotlivých prvků společně. Hodnota 1,0 = dokonalá korelace, 0 = žádný vztah.
+        {dict.charts.correlation.description}
       </p>
 
       <div className="overflow-x-auto">
@@ -87,7 +89,7 @@ export default function CorrelationMatrix({ data }: Props) {
         </p>
       )}
 
-      <SourceAttribution source="korelace měsíčních výnosů oxidů vzácných zemin 2014–2025" />
+      <SourceAttribution source={dict.charts.correlation.source} dict={dict} />
     </div>
   )
 }

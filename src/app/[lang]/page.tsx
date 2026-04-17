@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { getDictionary, hasLocale } from '@/i18n'
 import { loadData } from '@/lib/data'
 import type { SupplyChainStage, GapDataPoint, CostPassthrough, ChinaBalance } from '@/lib/types'
 import BigNumber from '@/components/ui/BigNumber'
@@ -9,7 +11,11 @@ import KeyInsights from '@/components/sections/KeyInsights'
 import ChartExport from '@/components/ui/ChartExport'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 
-export default async function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  if (!hasLocale(lang)) notFound()
+  const dict = await getDictionary(lang)
+
   const [supplyChain, gapData, costPass, chinaBalance] = await Promise.all([
     loadData<SupplyChainStage[]>('supply_chain.json'),
     loadData<GapDataPoint[]>('gap_analysis.json'),
@@ -22,13 +28,13 @@ export default async function HomePage() {
       {/* Hero */}
       <div className="pt-4 pb-2 sm:pt-8 sm:pb-4">
         <span className="text-xs font-semibold uppercase tracking-widest text-[#D97706]">
-          Strategická analýza
+          {dict.home.badge}
         </span>
         <h1 className="mt-2 font-serif text-4xl font-bold leading-tight text-[#0F172A] sm:text-5xl lg:text-6xl">
-          Vzácné zeminy
+          {dict.home.title}
         </h1>
         <p className="mt-3 max-w-2xl font-serif text-lg italic text-[#64748B] sm:text-xl">
-          Interaktivní přehled globálního trhu se vzácnými zeminami
+          {dict.home.subtitle}
         </p>
         <p className="mt-4 text-sm text-[#64748B]">
           David Navrátil · {' '}
@@ -38,9 +44,9 @@ export default async function HomePage() {
             rel="noopener noreferrer"
             className="text-[#D97706] hover:underline"
           >
-            Peníze, procenta a prosperita
+            {dict.home.newsletter}
           </a>
-          {' '} · hlavní ekonom České spořitelny
+          {' '} · {dict.home.authorLine}
         </p>
       </div>
 
@@ -48,21 +54,15 @@ export default async function HomePage() {
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <p className="text-sm leading-relaxed text-[#334155]">
-            <span className="font-semibold text-[#0F172A]">Vzácné zeminy</span> je skupina 17 kovových prvků,
-            bez kterých se neobejde žádný elektromobil, větrná turbína, smartphone ani řízená střela.
-            Paradoxně nejsou geologicky vzácné — vzácná je schopnost je ekonomicky těžit, separovat
-            a zpracovat na průmyslově využitelné materiály. Tuto schopnost má dnes téměř výhradně Čína.
+            <span className="font-semibold text-[#0F172A]">{dict.home.explainerBold}</span> {dict.home.explainerP1}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-[#334155]">
-            Tato analýza mapuje celý <Link href="/supply-chain" className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">hodnotový řetězec</Link> od
-            rudy po hotový magnet, identifikuje kritická místa závislosti a modeluje <Link href="/scenarios" className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">scénáře</Link>,
-            co se stane, když se dodavatelský řetězec přeruší.
+            {dict.home.explainerP2Text} <Link href={`/${lang}/supply-chain`} className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">{dict.home.explainerP2Link1}</Link> {dict.home.explainerP2Mid} <Link href={`/${lang}/scenarios`} className="font-medium text-[#0E7490] underline decoration-dotted hover:text-[#0F172A]">{dict.home.explainerP2Link2}</Link>{dict.home.explainerP2End}
           </p>
         </div>
         <div className="flex items-center rounded-xl border border-[#D97706]/20 bg-[#D97706]/5 p-5">
           <p className="text-sm italic leading-relaxed text-[#92400E]">
-            „Kdo ovládá vzácné zeminy, ovládá technologickou budoucnost.
-            A dnes je ovládá jedna země."
+            {dict.home.quote}
           </p>
         </div>
       </div>
@@ -72,30 +72,30 @@ export default async function HomePage() {
       <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
         <BigNumber
           value={69}
-          label="Podíl Číny na těžbě"
+          label={dict.home.bigNumbers.miningShare}
           color="#9D174D"
-          href="/supply-chain"
+          href={`/${lang}/supply-chain`}
           delay={0}
         />
         <BigNumber
           value={91}
-          label="Podíl Číny na rafinaci"
+          label={dict.home.bigNumbers.refiningShare}
           color="#9D174D"
-          href="/supply-chain"
+          href={`/${lang}/supply-chain`}
           delay={150}
         />
         <BigNumber
           value={94}
-          label="Podíl Číny na magnetech"
+          label={dict.home.bigNumbers.magnetShare}
           color="#9D174D"
-          href="/supply-chain"
+          href={`/${lang}/supply-chain`}
           delay={300}
         />
         <BigNumber
           value={98}
-          label="Podíl na zpracování terbia (Tb)"
+          label={dict.home.bigNumbers.terbiumShare}
           color="#9D174D"
-          href="/elements"
+          href={`/${lang}/elements`}
           delay={450}
         />
       </div>
@@ -103,25 +103,25 @@ export default async function HomePage() {
       {/* Concentration + Key Insights */}
       <div className="grid gap-6 lg:grid-cols-5">
         <div className="group rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6 lg:col-span-3">
-          <ChartExport filename="koncentrace-dodavatelskeho-retezce">
-            <ConcentrationCascade data={supplyChain} />
+          <ChartExport filename="koncentrace-dodavatelskeho-retezce" downloadTitle={dict.common.downloadPng}>
+            <ConcentrationCascade data={supplyChain} dict={dict} />
           </ChartExport>
         </div>
         <div className="lg:col-span-2">
-          <KeyInsights />
+          <KeyInsights dict={dict} lang={lang} />
         </div>
       </div>
 
       {/* Gap Chart + China Balance */}
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="group rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-          <ChartExport filename="nabidka-vs-poptavka">
-            <GapChart data={gapData} />
+          <ChartExport filename="nabidka-vs-poptavka" downloadTitle={dict.common.downloadPng}>
+            <GapChart data={gapData} dict={dict} />
           </ChartExport>
         </div>
         <div className="group rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-          <ChartExport filename="cinska-bilance">
-            <ChinaBalanceChart data={chinaBalance} />
+          <ChartExport filename="cinska-bilance" downloadTitle={dict.common.downloadPng}>
+            <ChinaBalanceChart data={chinaBalance} dict={dict} />
           </ChartExport>
         </div>
       </div>
@@ -130,42 +130,41 @@ export default async function HomePage() {
       <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
         <blockquote className="mb-6 border-l-4 border-[#D97706] pl-4">
           <p className="text-xl font-bold italic text-[#0F172A]">
-            „Vzácné zeminy nejsou cenový problém — jsou problém dostupnosti."
+            {dict.home.quoteBlock}
           </p>
           <p className="mt-2 text-sm text-[#475569]">
-            I trojnásobné zdražení vzácných zemin přidá méně než 1 % k ceně elektromobilu.
-            Skutečné riziko je, že dodávky prostě přestanou proudit.
+            {dict.home.quoteExplanation}
           </p>
         </blockquote>
 
         <h3 className="mb-4 text-lg font-bold text-[#0F172A]">
-          Cenový přenos vzácných zemin do produktů
+          {dict.home.costPassTitle}
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-[#E2E8F0]">
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Produkt</th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Cena REE</th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Cena produktu</th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Podíl REE</th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Dopad 3× zdražení</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{dict.home.costPassHeaders.product}</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{dict.home.costPassHeaders.reePrice}</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{dict.home.costPassHeaders.productPrice}</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{dict.home.costPassHeaders.reeShare}</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{dict.home.costPassHeaders.tripleImpact}</th>
               </tr>
             </thead>
             <tbody>
               {costPass.slice(0, 6).map((row, i) => (
                 <tr key={i} className="border-b border-[#E2E8F0]/50 hover:bg-[#F1F5F9]">
-                  <td className="px-3 py-2 font-medium text-[#0F172A]">{row.Produkt}</td>
+                  <td className="px-3 py-2 font-medium text-[#0F172A]">{(dict.home.costPassProducts as Record<string, string>)?.[row.Produkt] ?? row.Produkt}</td>
                   <td className="px-3 py-2 font-mono text-xs text-[#475569]">{row['Cena REE (USD)']}</td>
                   <td className="px-3 py-2 font-mono text-xs text-[#475569]">{row['Cena produktu (USD)']}</td>
                   <td className="px-3 py-2 font-mono text-xs text-[#0E7490]">{row['REE/produkt (%)']}</td>
-                  <td className="px-3 py-2 font-mono text-xs text-[#D97706]">{row['Dopad 3× zdražení']}</td>
+                  <td className="px-3 py-2 font-mono text-xs text-[#D97706]">{(dict.home.costPassImpact as Record<string, string>)?.[row['Dopad 3× zdražení']] ?? row['Dopad 3× zdražení']}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <SourceAttribution source="výpočty na základě tržních cen komponentů a spotových cen vzácných zemin" />
+        <SourceAttribution source={dict.home.costPassSource} dict={dict} />
       </div>
 
     </div>

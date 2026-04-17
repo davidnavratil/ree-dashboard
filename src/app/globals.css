@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-fraunces);
   --font-heading: var(--font-inter);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -57,23 +57,23 @@
 }
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #0F172A;
-  --card: #F8FAFC;
-  --card-foreground: #0F172A;
+  --background: #F5F1E8;
+  --foreground: #111111;
+  --card: #FFFFFF;
+  --card-foreground: #111111;
   --popover: #FFFFFF;
-  --popover-foreground: #0F172A;
+  --popover-foreground: #111111;
   --primary: #0E7490;
   --primary-foreground: #FFFFFF;
-  --secondary: #F1F5F9;
-  --secondary-foreground: #0F172A;
-  --muted: #F1F5F9;
-  --muted-foreground: #64748B;
-  --accent: #F1F5F9;
-  --accent-foreground: #0F172A;
+  --secondary: #EDE9E0;
+  --secondary-foreground: #111111;
+  --muted: #EDE9E0;
+  --muted-foreground: #736D64;
+  --accent: #EDE9E0;
+  --accent-foreground: #111111;
   --destructive: #9D174D;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
+  --border: #E0DCD4;
+  --input: #E0DCD4;
   --ring: #0E7490;
   --chart-1: #0E7490;
   --chart-2: #9D174D;

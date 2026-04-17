@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import { sankey as d3Sankey, sankeyLinkHorizontal } from 'd3-sankey'
+import type { Dictionary } from '@/i18n'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 
 interface SankeyNode {
@@ -16,29 +17,36 @@ interface SankeyLink {
   value: number
 }
 
-const NODES: SankeyNode[] = [
-  // Stage 0: Mining (sources)
-  { name: 'Čína (těžba)', category: 'china' },
-  { name: 'Myanmar', category: 'other' },
-  { name: 'USA', category: 'west' },
-  { name: 'Austrálie', category: 'west' },
-  { name: 'Ostatní', category: 'other' },
-  // Stage 1: Separation
-  { name: 'Separace (Čína)', category: 'china' },
-  { name: 'Separace (Západ)', category: 'west' },
-  // Stage 2: Metal/Alloy
-  { name: 'Kov/slitina (Čína)', category: 'china' },
-  { name: 'Kov/slitina (Západ)', category: 'west' },
-  // Stage 3: Magnets
-  { name: 'NdFeB magnety (Čína)', category: 'china' },
-  { name: 'NdFeB magnety (JP/EU)', category: 'west' },
-  // Stage 4: Applications
-  { name: 'EV motory', category: 'app' },
-  { name: 'Větrné turbíny', category: 'app' },
-  { name: 'Elektronika', category: 'app' },
-  { name: 'Obrana', category: 'app' },
-  { name: 'Ostatní aplikace', category: 'app' },
-]
+interface Props {
+  dict: Dictionary
+}
+
+function getNodes(dict: Dictionary): SankeyNode[] {
+  const n = dict.charts.sankey.nodes
+  return [
+    // Stage 0: Mining (sources)
+    { name: n.chinaMining, category: 'china' },
+    { name: n.myanmar, category: 'other' },
+    { name: n.usa, category: 'west' },
+    { name: n.australia, category: 'west' },
+    { name: n.other, category: 'other' },
+    // Stage 1: Separation
+    { name: n.separationChina, category: 'china' },
+    { name: n.separationWest, category: 'west' },
+    // Stage 2: Metal/Alloy
+    { name: n.metalChina, category: 'china' },
+    { name: n.metalWest, category: 'west' },
+    // Stage 3: Magnets
+    { name: n.magnetsChina, category: 'china' },
+    { name: n.magnetsJpEu, category: 'west' },
+    // Stage 4: Applications
+    { name: n.evMotors, category: 'app' },
+    { name: n.windTurbines, category: 'app' },
+    { name: n.electronics, category: 'app' },
+    { name: n.defense, category: 'app' },
+    { name: n.otherApps, category: 'app' },
+  ]
+}
 
 const LINKS: SankeyLink[] = [
   // Mining → Separation
@@ -76,11 +84,13 @@ const CATEGORY_COLORS: Record<string, string> = {
   app: '#1D4ED8',
 }
 
-export default function SankeyFlow() {
+export default function SankeyFlow({ dict }: Props) {
   const svgRef = useRef<SVGSVGElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [tooltip, setTooltip] = useState<{ x: number; y: number; text: string } | null>(null)
   const [dimensions, setDimensions] = useState({ width: 900, height: 500 })
+
+  const NODES = getNodes(dict)
 
   useEffect(() => {
     const observer = new ResizeObserver(entries => {
@@ -174,18 +184,18 @@ export default function SankeyFlow() {
       .attr('fill', '#475569')
       .text((d: any) => d.name)
 
-  }, [dimensions])
+  }, [dimensions, NODES])
 
   return (
     <div>
       <h3 className="mb-2 text-lg font-bold text-[#0F172A]">
-        Tok vzácných zemin: od těžby po aplikace
+        {dict.charts.sankey.title}
       </h3>
       <p className="mb-4 text-xs text-[#64748B]">
-        Sankeyho diagram znázorňuje tok vzácných zemin (v kt REO) od těžby přes zpracování po koncové aplikace.
-        <span className="ml-1 font-medium text-[#9D174D]">Růžová = Čína</span>,{' '}
-        <span className="font-medium text-[#0E7490]">teal = Západ</span>,{' '}
-        <span className="font-medium text-[#1D4ED8]">modrá = aplikace</span>.
+        {dict.charts.sankey.description}
+        <span className="ml-1 font-medium text-[#9D174D]">{dict.charts.sankey.legendChina}</span>,{' '}
+        <span className="font-medium text-[#0E7490]">{dict.charts.sankey.legendWest}</span>,{' '}
+        <span className="font-medium text-[#1D4ED8]">{dict.charts.sankey.legendApps}</span>.
       </p>
       <div ref={containerRef} className="relative">
         <svg
@@ -204,7 +214,7 @@ export default function SankeyFlow() {
           </div>
         )}
       </div>
-      <SourceAttribution source="USGS 2025, vlastní odhady toků 2024" />
+      <SourceAttribution source={dict.charts.sankey.source} dict={dict} />
     </div>
   )
 }

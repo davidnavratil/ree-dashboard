@@ -2,84 +2,75 @@
 
 import { useState } from 'react'
 import type { Company, PipelineProject } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 
 interface Props {
   companies: Company[]
   pipeline: PipelineProject[]
+  dict: Dictionary
+  lang: string
 }
 
 type SortKey = 'Firma' | 'Země' | 'Status 2025'
 type SortDir = 'asc' | 'desc'
 
-const STATUS_COLORS: Record<string, string> = {
-  'Operační': '#0E7490',
-  'Operační+expanze': '#0E7490',
-  'Operační; expanze': '#0E7490',
-  'Výstavba': '#D97706',
-  'Příprava': '#1D4ED8',
-  'Studie': '#64748B',
-  'Plánovaný': '#64748B',
+const STATUS_COLOR_MAP: Record<string, string> = {
+  'operational': '#0E7490',
+  'operationalExpansion': '#0E7490',
+  'construction': '#D97706',
+  'preparation': '#1D4ED8',
+  'study': '#64748B',
+  'planned': '#64748B',
 }
 
 function getStatusColor(status: string): string {
-  for (const [key, color] of Object.entries(STATUS_COLORS)) {
-    if (status?.toLowerCase().includes(key.toLowerCase())) return color
+  const lower = status?.toLowerCase() ?? ''
+  for (const [, color] of Object.entries(STATUS_COLOR_MAP)) {
+    // match against the status text loosely
+    if (lower.includes('operační') || lower.includes('operational')) return '#0E7490'
   }
+  if (lower.includes('výstavba') || lower.includes('construction')) return '#D97706'
+  if (lower.includes('příprava') || lower.includes('preparation')) return '#1D4ED8'
+  if (lower.includes('studie') || lower.includes('study') || lower.includes('plánovan') || lower.includes('planned')) return '#64748B'
   return '#64748B'
 }
 
-const COUNTRY_NAMES: Record<string, string> = {
-  'CN': 'Čína',
-  'AU': 'Austrálie',
-  'US': 'USA',
-  'JP': 'Japonsko',
-  'DE': 'Německo',
-  'NO': 'Norsko',
-  'BR': 'Brazílie',
-  'CA': 'Kanada',
-  'EE': 'Estonsko',
-  'BE': 'Belgie',
-  'FR': 'Francie',
-  'SE': 'Švédsko',
-  'GL': 'Grónsko',
-  'IN': 'Indie',
-  'MY': 'Malajsie',
-  'MM': 'Myanmar',
-}
-
-function formatCountry(code: string): string {
+function formatCountry(code: string, countries: Dictionary['countries']): string {
   if (!code) return code
-  return code.split('/').map(c => COUNTRY_NAMES[c.trim()] ?? c.trim()).join(' / ')
+  return code.split('/').map(c => {
+    const trimmed = c.trim()
+    return (countries as Record<string, string>)[trimmed] ?? trimmed
+  }).join(' / ')
 }
 
-const FINANCING_TERMS: Record<string, string> = {
-  'DoD': 'ministerstvo obrany USA',
-  'JP': 'Japonsko',
-  'AU': 'Austrálie',
-  'KR': 'Jižní Korea',
-  'DE': 'Německo',
-  'SE': 'Švédsko',
-  'FR': 'Francie',
-  'US': 'americký',
-  'PE fond': 'soukromý kapitálový fond',
-  'TBD': 'dosud neurčeno',
-}
-
-function formatFinancing(raw: string): string {
+function formatFinancing(raw: string, terms: Dictionary['supplyChain']['financingTerms']): string {
   if (!raw) return raw
   let result = raw
-  // Sort by length desc to replace longer matches first (e.g. "PE fond" before "PE")
-  const sorted = Object.entries(FINANCING_TERMS).sort((a, b) => b[0].length - a[0].length)
+  const entries: [string, string][] = [
+    ['PE fond', terms.PEFund],
+    ['DoD', terms.DoD],
+    ['JP', terms.JP],
+    ['AU', terms.AU],
+    ['KR', terms.KR],
+    ['DE', terms.DE],
+    ['SE', terms.SE],
+    ['FR', terms.FR],
+    ['US', terms.US],
+    ['TBD', terms.TBD],
+  ]
+  // Sort by length desc to replace longer matches first
+  const sorted = entries.sort((a, b) => b[0].length - a[0].length)
   for (const [abbr, full] of sorted) {
     result = result.replace(new RegExp(`\\b${abbr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'), full)
   }
   return result
 }
 
-export default function SupplyChainClient({ companies, pipeline }: Props) {
+export default function SupplyChainClient({ companies, pipeline, dict, lang }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>('Země')
   const [sortDir, setSortDir] = useState<SortDir>('asc')
+  const t = dict.supplyChain
 
   const handleSort = (key: SortKey) => {
     if (sortKey === key) {
@@ -93,7 +84,7 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
   const sorted = [...companies].sort((a, b) => {
     const aVal = String(a[sortKey] ?? '')
     const bVal = String(b[sortKey] ?? '')
-    return sortDir === 'asc' ? aVal.localeCompare(bVal, 'cs') : bVal.localeCompare(aVal, 'cs')
+    return sortDir === 'asc' ? aVal.localeCompare(bVal, lang) : bVal.localeCompare(aVal, lang)
   })
 
   return (
@@ -101,19 +92,18 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
       {/* Companies Table */}
       <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
         <h3 className="mb-4 text-lg font-bold text-[#0F172A]">
-          Klíčové firmy v hodnotovém řetězci
+          {t.companiesTitle}
         </h3>
         <p className="mb-4 text-xs text-[#64748B]">
-          Klikněte na záhlaví sloupce pro seřazení. Vertikální integrace označuje,
-          které fáze řetězce firma pokrývá (těžba → separace → kov → magnety).
+          {t.companiesDesc}
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-[#E2E8F0]">
                 {[
-                  { key: 'Firma' as SortKey, label: 'Firma' },
-                  { key: 'Země' as SortKey, label: 'Země' },
+                  { key: 'Firma' as SortKey, label: t.headers.company },
+                  { key: 'Země' as SortKey, label: t.headers.country },
                 ].map(({ key, label }) => (
                   <th
                     key={key}
@@ -123,16 +113,16 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
                     {label} {sortKey === key ? (sortDir === 'asc' ? '↑' : '↓') : ''}
                   </th>
                 ))}
-                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">Těžba</th>
-                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">Separace</th>
-                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">Kov</th>
-                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">Magnety</th>
-                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">Kapacita</th>
+                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">{t.headers.mining}</th>
+                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">{t.headers.separation}</th>
+                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">{t.headers.metal}</th>
+                <th className="px-3 py-2 text-center text-xs font-medium text-[#64748B]">{t.headers.magnets}</th>
+                <th className="px-3 py-2 text-left text-xs font-medium text-[#64748B]">{t.headers.capacity}</th>
                 <th
                   className="cursor-pointer px-3 py-2 text-left text-xs font-medium text-[#64748B] hover:text-[#475569]"
                   onClick={() => handleSort('Status 2025')}
                 >
-                  Status {sortKey === 'Status 2025' ? (sortDir === 'asc' ? '↑' : '↓') : ''}
+                  {t.headers.status} {sortKey === 'Status 2025' ? (sortDir === 'asc' ? '↑' : '↓') : ''}
                 </th>
               </tr>
             </thead>
@@ -149,14 +139,14 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
                     <td className="px-3 py-2 font-medium text-[#0F172A]">{c.Firma}</td>
                     <td className="px-3 py-2 text-[#475569]">
                       <span className={isChina ? 'text-[#9D174D]' : 'text-[#0E7490]'}>
-                        {formatCountry(c.Země)}
+                        {formatCountry(c.Země, dict.countries)}
                       </span>
                     </td>
                     <td className="px-3 py-2 text-center">{c.Těžba === '●' ? '✓' : ''}</td>
                     <td className="px-3 py-2 text-center">{c.Separace === '●' ? '✓' : ''}</td>
                     <td className="px-3 py-2 text-center">{c.Kov === '●' ? '✓' : ''}</td>
                     <td className="px-3 py-2 text-center">{c.Magnety === '●' ? '✓' : ''}</td>
-                    <td className="px-3 py-2 text-xs text-[#475569]">{c['Kapacita / pozice']}</td>
+                    <td className="px-3 py-2 text-xs text-[#475569]">{(t.companyCapacityMap as Record<string, string>)?.[c['Kapacita / pozice']] ?? c['Kapacita / pozice']}</td>
                     <td className="px-3 py-2">
                       <span
                         className="inline-block rounded-full px-2 py-0.5 text-xs font-medium"
@@ -165,7 +155,7 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
                           color: getStatusColor(c['Status 2025']),
                         }}
                       >
-                        {c['Status 2025']}
+                        {(t.companyStatusMap as Record<string, string>)?.[c['Status 2025']] ?? c['Status 2025']}
                       </span>
                     </td>
                   </tr>
@@ -174,17 +164,16 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
             </tbody>
           </table>
         </div>
-        <SourceAttribution source="výroční zprávy firem, SEC/ASX filings, 2025" />
+        <SourceAttribution source={t.companiesSource} dict={dict} />
       </div>
 
       {/* Pipeline Timeline */}
       <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
         <h3 className="mb-4 text-lg font-bold text-[#0F172A]">
-          Plánované mimočínské projekty
+          {t.pipelineTitle}
         </h3>
         <p className="mb-4 text-xs text-[#64748B]">
-          Projekty mimo Čínu, které mají potenciál snížit závislost na čínském dodavatelském řetězci.
-          Barva označuje aktuální stav projektu.
+          {t.pipelineDesc}
         </p>
         <div className="space-y-3">
           {pipeline.map((p, i) => {
@@ -200,35 +189,35 @@ export default function SupplyChainClient({ companies, pipeline }: Props) {
                     className="inline-block rounded-full px-2 py-0.5 text-[10px] font-medium"
                     style={{ backgroundColor: `${color}20`, color }}
                   >
-                    {p.Status}
+                    {(t.pipelineStatusMap as Record<string, string>)?.[p.Status] ?? p.Status}
                   </span>
                 </div>
                 <p className="mb-3 text-xs text-[#475569]">
-                  {p.Firma} · {formatCountry(p.Země)} · {p.Typ}
+                  {p.Firma} · {formatCountry(p.Země, dict.countries)} · {(t.pipelineTypeMap as Record<string, string>)?.[p.Typ] ?? p.Typ}
                 </p>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-4">
                   <div>
-                    <p className="text-[10px] text-[#64748B]">Kapacita (t/rok)</p>
+                    <p className="text-[10px] text-[#64748B]">{t.pipelineLabels.capacityTpa}</p>
                     <p className="font-mono text-sm font-medium text-[#0E7490]">{p['Kapacita (tpa)']}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] text-[#64748B]">Zahájení provozu</p>
+                    <p className="text-[10px] text-[#64748B]">{t.pipelineLabels.startEstimate}</p>
                     <p className="text-sm text-[#0F172A]">{p['Start (odhad)']}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] text-[#64748B]">Investice</p>
-                    <p className="text-sm font-medium text-[#D97706]">{p['Investice (mil. USD)']} mil. USD</p>
+                    <p className="text-[10px] text-[#64748B]">{t.pipelineLabels.investment}</p>
+                    <p className="text-sm font-medium text-[#D97706]">{p['Investice (mil. USD)']} {t.pipelineLabels.milUsd}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] text-[#64748B]">Financování</p>
-                    <p className="text-sm text-[#475569]">{formatFinancing(p.Financování)}</p>
+                    <p className="text-[10px] text-[#64748B]">{t.pipelineLabels.financing}</p>
+                    <p className="text-sm text-[#475569]">{(t.pipelineFinancingMap as Record<string, string>)?.[p.Financování] ?? formatFinancing(p.Financování, t.financingTerms)}</p>
                   </div>
                 </div>
               </div>
             )
           })}
         </div>
-        <SourceAttribution source="firemní oznámení, DFS studie, vládní granty (DoD, JOGMEC, EU), 2025" />
+        <SourceAttribution source={t.pipelineSource} dict={dict} />
       </div>
     </div>
   )

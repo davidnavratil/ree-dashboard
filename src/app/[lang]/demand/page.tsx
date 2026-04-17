@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation'
+import { getDictionary, hasLocale } from '@/i18n'
 import { loadData } from '@/lib/data'
 import type { DemandRow, GapDataPoint } from '@/lib/types'
 import PageHeader from '@/components/layout/PageHeader'
@@ -12,7 +14,11 @@ interface Projection {
   [key: string]: string | number | null
 }
 
-export default async function DemandPage() {
+export default async function DemandPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  if (!hasLocale(lang)) notFound()
+  const dict = await getDictionary(lang)
+
   const [demand, materialIntensity, projections, gapData] = await Promise.all([
     loadData<DemandRow[]>('demand.json'),
     loadData<MaterialIntensity[]>('material_intensity.json'),
@@ -23,19 +29,21 @@ export default async function DemandPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        title="Poptávka po vzácných zeminách"
-        subtitle="Kdo potřebuje jaké vzácné zeminy, kolik jich spotřebuje a jak rychle poptávka poroste. Elektromobilita a větrná energie jsou hlavními tahouny růstu."
+        title={dict.demand.title}
+        subtitle={dict.demand.subtitle}
       />
 
       {/* Gap Chart */}
       <div className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] p-6">
-        <GapChart data={gapData} />
+        <GapChart data={gapData} dict={dict} />
       </div>
 
       <DemandClient
         demand={demand}
         materialIntensity={materialIntensity}
         projections={projections}
+        dict={dict}
+        lang={lang}
       />
     </div>
   )

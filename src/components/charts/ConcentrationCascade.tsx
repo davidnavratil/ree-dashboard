@@ -12,21 +12,26 @@ import {
 } from 'recharts'
 import SourceAttribution from '@/components/ui/SourceAttribution'
 import type { SupplyChainStage } from '@/lib/types'
+import type { Dictionary } from '@/i18n'
 import { parseNumericString } from '@/lib/format'
 
 interface Props {
   data: SupplyChainStage[]
+  dict: Dictionary
 }
 
-const COUNTRIES = [
-  { key: 'Čína (%)', color: '#DC2626', label: 'Čína' },
-  { key: 'USA (%)', color: '#374151', label: 'USA' },
-  { key: 'Austrálie (%)', color: '#FBBF24', label: 'Austrálie' },
-  { key: 'Myanmar (%)', color: '#F97316', label: 'Myanmar' },
-  { key: 'Japonsko (%)', color: '#EC4899', label: 'Japonsko' },
-  { key: 'EU (%)', color: '#1D4ED8', label: 'EU' },
-  { key: 'Ostatní (%)', color: '#CBD5E1', label: 'Ostatní' },
-]
+function getCountries(dict: Dictionary) {
+  const c = dict.charts.concentration.countries
+  return [
+    { key: 'Čína (%)', color: '#DC2626', label: c.china },
+    { key: 'USA (%)', color: '#374151', label: c.usa },
+    { key: 'Austrálie (%)', color: '#FBBF24', label: c.australia },
+    { key: 'Myanmar (%)', color: '#F97316', label: c.myanmar },
+    { key: 'Japonsko (%)', color: '#EC4899', label: c.japan },
+    { key: 'EU (%)', color: '#1D4ED8', label: c.eu },
+    { key: 'Ostatní (%)', color: '#CBD5E1', label: c.other },
+  ]
+}
 
 function CustomTooltip({ active, payload, label }: any) {
   if (!active || !payload) return null
@@ -42,15 +47,18 @@ function CustomTooltip({ active, payload, label }: any) {
   )
 }
 
-export default function ConcentrationCascade({ data }: Props) {
-  // Replace technical abbreviations with readable Czech labels
+export default function ConcentrationCascade({ data, dict }: Props) {
+  const COUNTRIES = getCountries(dict)
+  const lm = dict.charts.concentration.labelMap
+
   const LABEL_MAP: Record<string, string> = {
-    'Výroba NdFeB magnetů': 'Neodymové\nmagnety',
-    'Separace Dy/Tb': 'Separace\ndysprosia a terbia',
-    'Výroba SmCo magnetů': 'Samariumkobaltové\nmagnety',
-    'Konverze oxid → kov/slitina': 'Konverze oxid\n→ kov/slitina',
-    'Separace → oxidy': 'Separace\n→ oxidy',
-    'Koncentrace rudy': 'Koncentrace\nrudy',
+    'Těžba': lm.mining,
+    'Výroba NdFeB magnetů': lm.ndfebMagnets,
+    'Separace Dy/Tb': lm.dyTbSeparation,
+    'Výroba SmCo magnetů': lm.smCoMagnets,
+    'Konverze oxid → kov/slitina': lm.oxideConversion,
+    'Separace → oxidy': lm.separationOxides,
+    'Koncentrace rudy': lm.oreConcentration,
   }
 
   const chartData = data.map((row) => {
@@ -65,7 +73,7 @@ export default function ConcentrationCascade({ data }: Props) {
   return (
     <div>
       <h3 className="mb-4 text-lg font-bold text-[#0F172A]">
-        Koncentrace dodavatelského řetězce podle zemí
+        {dict.charts.concentration.title}
       </h3>
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={chartData} layout="vertical" margin={{ left: 10, right: 20, top: 5, bottom: 5 }}>
@@ -84,7 +92,7 @@ export default function ConcentrationCascade({ data }: Props) {
           ))}
         </BarChart>
       </ResponsiveContainer>
-      <SourceAttribution source="USGS 2025" />
+      <SourceAttribution source={dict.charts.concentration.source} dict={dict} />
     </div>
   )
 }

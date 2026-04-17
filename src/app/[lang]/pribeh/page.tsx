@@ -1,8 +1,14 @@
+import { notFound } from 'next/navigation'
+import { getDictionary, hasLocale } from '@/i18n'
 import { loadData } from '@/lib/data'
 import type { SupplyChainStage, GapDataPoint, ChinaBalance, CostPassthrough } from '@/lib/types'
 import PribehClient from './PribehClient'
 
-export default async function PribehPage() {
+export default async function PribehPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  if (!hasLocale(lang)) notFound()
+  const dict = await getDictionary(lang)
+
   const [supplyChain, gapData, chinaBalance, costPass] = await Promise.all([
     loadData<SupplyChainStage[]>('supply_chain.json'),
     loadData<GapDataPoint[]>('gap_analysis.json'),
@@ -16,6 +22,8 @@ export default async function PribehPage() {
       gapData={gapData}
       chinaBalance={chinaBalance}
       costPass={costPass}
+      dict={dict}
+      lang={lang}
     />
   )
 }
