@@ -40,6 +40,9 @@
   "overrides": {
     "next": {
       "postcss": "^8.5.15"
+    },
+    "@ts-morph/common": {
+      "minimatch": "^11.0.1"
     }
   }
 }
